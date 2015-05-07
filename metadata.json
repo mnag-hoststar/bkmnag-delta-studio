@@ -1,0 +1,148 @@
+{
+	"name":"Delta Studio",
+	"thumbnail":"deltastudio.png",
+	"screenshot":"deltastudio.png",
+	"templateType":"standard",
+    "pageTypes": ["home"],
+    "tags": {
+    "en": ["minimal", "clean", "modern", "creative", "typography", "simple", "contemporary", "flexible", "studio", "portfolio", "designer", "sans-serif"],
+    "es": ["minimalista", "limpio", "moderno", "creativo", "tipográfico", "simple", "contemporaneo", "flexible", "estudio", "portafolio", "diseñador", "sans-serif"],
+    "br": ["minimalista", "limpo", "moderno", "criativo", "tipográfico", "simples", "contemporâneo", "flexível", "estúdio", "portfolio", "designer", "sans-serif"]
+    },
+    "colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#ffffff",
+            "color2":"#2e302f",
+            "color3":"#3f4140",
+            "color4":"#5b6271",
+            "color5":"#9d9d9d",
+            "color6":"#dfdfe4",
+            "color7":"#98979c"
+        },
+        "Swatch 2": {
+            "color1":"#f7f8fa",
+            "color2":"#383e44",
+            "color3":"#444955",
+            "color4":"#91949b",
+            "color5":"#b5b9bf",
+            "color6":"#caced5",
+            "color7":"#acafb5"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#343434",
+            "color3":"#000000",
+            "color4":"#63666d",
+            "color5":"#6c7483",
+            "color6":"#e7e8ea",
+            "color7":"#abb1bc"
+        },
+        "Swatch 4": {
+            "color1":"#faf8f5",
+            "color2":"#2f2b28",
+            "color3":"#403d3b",
+            "color4":"#71675b",
+            "color5":"#9d9d9d",
+            "color6":"#e4e2df",
+            "color7":"#9c9691"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#302f2e",
+            "color3":"#41403f",
+            "color4":"#71675b",
+            "color5":"#9d9d9d",
+            "color6":"#e4e2df",
+            "color7":"#9c9691"
+        }
+    },
+    "fontSwatch": {
+       "title": "Roboto",
+        "font1": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "50px",
+            "font-weight": "300",
+            "line-height": "60px",
+            "color": "@color-swatch3",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "30px",
+            "font-weight": "400",
+            "line-height": "36px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "22px",
+            "font-weight": "700",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "700",
+            "line-height": "26px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "22px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "13px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch1",
+            "color-hover": "darken(@color-swatch1,5%)",
+            "letter-spacing": "1px",
+            "background-color": "@color-swatch3",
+            "background-color-hover": "@color-swatch2"
+        },
+        "font7": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "12px",
+            "font-weight": "400",
+            "line-height": "26px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch3",
+            "background-color-hover": "darken(@color-swatch3,5%)"
+        },
+        "font8": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "50px",
+            "font-weight": "300",
+            "line-height": "50px",
+            "color": "@color-swatch3",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "36px",
+            "color": "@color-swatch7",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
+            "font-size": "30px",
+            "font-weight": "400",
+            "line-height": "38px",
+            "color": "@color-swatch1",
+            "letter-spacing": "4px"
+        }
+    }
+}
