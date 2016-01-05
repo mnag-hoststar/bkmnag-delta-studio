@@ -333,7 +333,6 @@ footer .widget.profile .bk-profile-socialicons span a {
 
 .widget.feature .feature-bgimg {
   height: 500px;
-  display: inherit;
   background-repeat: no-repeat;
  }
 
@@ -1463,31 +1462,27 @@ hr.line.align-right {
     *display: block;
     *float: left;
     width: 100%;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 
   /* NAV ICON */
 
   .widget .extendednavigation a.pull {
     display: block;
-    width: 100%;
     position: absolute;
     top: 0;
   	right: 0;
-  	width: 20px;
-  	height: 20px;
+  	width: 24px;
+  	height: 24px;
   }
 
     .widget .extendednavigation a.pull:after {
-    content:"";
-    background: image('/images/nav-icon.png') no-repeat center;
-    /* background-color: @color-swatch7; */
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    position: absolute;
-    right: 0;
+    width: 24px;
+    height: 2px;
+    background: @color-swatch1;
     top: 0;
+    right: 0;
+    box-shadow: 0 7px 0 @color-swatch1, 0 14px 0 @color-swatch1;
   }
 
   .main .widget .extendednavigation a.pull {
