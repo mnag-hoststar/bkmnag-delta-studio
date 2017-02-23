@@ -44,7 +44,6 @@ h4 {
 h5 {
   font-size: bkscale(@font-swatch4-font-size, 0.8);
   line-height: bkscale(@font-swatch4-line-height, 0.8);
-
 }
 
 h6 {
@@ -58,9 +57,9 @@ p {
   padding-bottom: 1em;
 }
 
-p, ul, ol, li, .p-font, time.blog-post-publish-date {
-  font-size: bkscale(@font-swatch5-font-size, 1);
-  line-height: bkscale(@font-swatch5-line-height, 1);
+// Conditional when text is bigger
+
+.make-font-smaller() when (@font-swatch5-font-size > 16px) {
   @media @tablet {
     font-size: bkscale(@font-swatch5-font-size, 0.9);
     line-height: bkscale(@font-swatch5-line-height, 0.9);
@@ -69,4 +68,18 @@ p, ul, ol, li, .p-font, time.blog-post-publish-date {
     font-size: bkscale(@font-swatch5-font-size, 0.8);
     line-height: bkscale(@font-swatch5-line-height, 0.8);
   }
+}
+
+.make-font-a-little-smaller() when (@font-swatch5-font-size > 14px) {
+  @media @mobile {
+    font-size: bkscale(@font-swatch5-font-size, 0.9);
+    line-height: bkscale(@font-swatch5-line-height, 0.9);
+  }
+}
+
+html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
+  font-size: bkscale(@font-swatch5-font-size, 1);
+  line-height: bkscale(@font-swatch5-line-height, 1);
+  .make-font-a-little-smaller();
+  .make-font-smaller();
 }
