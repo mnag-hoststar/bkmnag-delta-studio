@@ -151,6 +151,224 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
+/* ===============================
+   LANGUAGE SELECTOR
+   =============================== */
+
+/* GENERAL STYLES */
+
+@language-padding: 5px;
+
+.language-selector.language-selector--dropdown,
+.language-selector.language-selector--horizontal {
+    box-sizing: content-box;
+}
+
+/* LANGAUGE SELECTOR LIGHT */
+
+.language-selector.language-selector--light {
+    background-color: @color-swatch1;
+}
+
+/* LANGUAGE SELECTOR DARK */
+
+.language-selector.language-selector--dark {
+    background-color: @color-swatch3;
+}
+
+/* GENERAL STYLES INSIDE THE LANGUAGE SELECTOR */
+
+.language-selector {
+    .language-selector__inner {
+        box-sizing: content-box;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .language-selector__link {
+        box-sizing: border-box;
+        padding: @language-padding @language-padding*2;
+        min-height: @font-swatch6-line-height;
+        border: none;
+    }
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	text-transform: uppercase;
+        font-family: @font-swatch6-font-family;
+        font-size: @font-swatch6-font-size;
+        font-weight: @font-swatch6-font-weight;
+        line-height: @font-swatch6-line-height;
+        letter-spacing: @font-swatch6-letter-spacing;
+    }
+}
+
+/* LANGUAGE SELECTOR DROPDOWN */
+
+.language-selector.language-selector--dropdown {
+    height: auto;
+    text-align: left;
+    
+    .language-selector__inner {
+        width: 100%;
+        margin: 0;
+        height: @font-swatch6-line-height+16px*2;
+        
+        @media @tablet {
+            height: @font-swatch6-line-height+8px*2;
+        }
+    }
+
+    .language-selector__list {
+        box-sizing: border-box;
+        min-width: auto;
+        margin: 0;
+        
+        @media @tablet {
+            position: relative;
+        }
+    }
+    
+    &.language-selector--flag .language-selector__list {
+        @media @tablet {
+            position: absolute;
+        }
+    }
+
+    .language-selector__item {
+        &--current {
+            &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                right: 15px;
+                top: 43%;
+                border: 5px solid transparent;
+            }
+        }
+    }
+    &.language-selector--light {
+        .language-selector__item {
+            &--current {
+                &:after {
+                    border-top-color: @color-swatch4;
+                }
+            }
+        }
+    }
+    &.language-selector--dark {
+        .language-selector__item {
+            &--current {
+                &:after {
+                    border-top-color: @color-swatch1;
+                }
+            }
+        }
+    }
+    
+    .language-selector__icon {
+        line-height: inherit;
+        float: left;
+    }
+
+    .language-selector__name,
+    .language-selector__localised-name {
+        @media only screen and (max-width: 300px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            display: block;
+        }
+    }
+}
+
+/* LANGUAGE SELECTOR SINGLE ITEM */
+
+.language-selector__item {
+    .language-selector.language-selector--light &,
+    .language-selector.language-selector--dark & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: transparent;
+            padding: 16px 26px;
+        
+            @media @tablet {
+                padding: 8px 26px;
+            }
+        }
+    }
+    
+    .language-selector.language-selector--dropdown & {
+        .language-selector__link {
+            padding: 16px 38px 16px 26px;
+        
+            @media @tablet {
+                padding: 8px 26px;
+            }
+        }
+    }
+    
+    .language-selector--dropdown.language-selector--light & {
+        background-color: @color-swatch1;
+    }
+    
+    .language-selector.language-selector--light &,
+    .language-selector--dropdown.language-selector--light & {
+        .language-selector__link:hover {
+            background-color: lighten(@color-swatch2,70%);
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: lighten(@color-swatch2,70%);
+            }
+        }
+    }
+    
+    .language-selector.language-selector--dark &,
+    .language-selector--dropdown.language-selector--dark & {
+        background-color: @color-swatch3;
+        
+        .language-selector__link:hover {
+            background-color: @color-swatch2;
+        }
+        
+        &.language-selector__item--current {
+            .language-selector__link,
+            .language-selector__link:hover {
+                background-color: @color-swatch2;
+            }
+        }
+    }
+}
+
+/* LANGUAGE SELECTOR TEXT */
+.language-selector__link {
+    .language-selector.language-selector--horizontal & {
+        text-align: right;
+    }
+    .language-selector.language-selector--dropdown & {
+        text-align: left;
+    }
+}
+
+.language-selector__name,
+.language-selector__localised-name {
+    .language-selector--dropdown.language-selector--light & {
+        font-size: @color-swatch4;
+    }
+    .language-selector--dropdown.language-selector--dark & {
+        font-size: @color-swatch1;
+    }
+}
 
 /* ===============================
    STANDARD NAVIGATION
@@ -216,22 +434,23 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 .widget.extendednavigation ul {
-  padding: 0;
-  margin: 0px auto;
-  display:table;
+    padding: 0;
+    margin: 0px auto;
+    display: table;
+    font-size: 0;
 }
 
 .widget.extendednavigation a.pull {
-  display: none;
+    display: none;
 }
 
 .widget.extendednavigation ul li {
-  display: inline-block;
-  padding: 0;
+    display: inline-block;
+    padding: 0;
 }
 
 .widget.extendednavigation ul li:hover {
-  color: @color-swatch4;
+    color: @color-swatch4;
 }
 
 .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
@@ -1451,7 +1670,7 @@ hr.line.align-right {
         padding: 36px 0 0 0; 
     }
 
-    .widget .extendednavigation ul  li {
+    .widget .extendednavigation ul li {
         width: 100%;
         padding: 0px;
         border-bottom: 1px solid lighten(@color-swatch2,3%);
