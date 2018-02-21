@@ -16,6 +16,7 @@
 @mobile-up: ~"only screen and (min-width : 480px)";
 
 
+
 /* ===============================
    TEMPLATE CSS
    =============================== */
@@ -32,6 +33,7 @@ body {
 title {
   display: block!important;
 }
+
 
 
 /* ===============================
@@ -55,6 +57,7 @@ title {
   /* border: 1px solid darken(@color-swatch3,2%); */
   border-top: 0;
 }
+
 
 
 /* ===============================
@@ -104,6 +107,7 @@ header.bk-header .header-bg {
 }
 
 
+
 /* ===============================
    FOOTER
    =============================== */
@@ -151,13 +155,15 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
+
+
 /* ===============================
    LANGUAGE SELECTOR
    =============================== */
 
 /* GENERAL STYLES */
 
-@language-padding: 5px;
+@language-padding: 0.4em;
 
 .language-selector.language-selector--dropdown,
 .language-selector.language-selector--horizontal {
@@ -187,7 +193,7 @@ footer .widget.profile .bk-profile-socialicons span a {
     
     .language-selector__link {
         box-sizing: border-box;
-        padding: @language-padding @language-padding*2;
+        padding: @language-padding*2 @language-padding*4;
         min-height: @font-swatch6-line-height;
         border: none;
     }
@@ -205,6 +211,16 @@ footer .widget.profile .bk-profile-socialicons span a {
         line-height: @font-swatch6-line-height;
         letter-spacing: @font-swatch6-letter-spacing;
     }
+    
+    &.language-selector--flag-text .language-selector__name {
+        padding-left: @language-padding;
+    }
+    
+    &.language-selector--flag-text .language-selector__icon {
+        display: inline-block;
+        line-height: inherit;
+        margin-right: 0;
+    }
 }
 
 /* LANGUAGE SELECTOR DROPDOWN */
@@ -216,10 +232,11 @@ footer .widget.profile .bk-profile-socialicons span a {
     .language-selector__inner {
         width: 100%;
         margin: 0;
-        height: @font-swatch6-line-height+10px*2;
+        height: @font-swatch6-line-height;
+		padding: @language-padding*2 0;
         
         @media @tablet {
-            height: @font-swatch6-line-height+5px*2;
+			padding: 0 0 @language-padding*4;
         }
     }
 
@@ -238,6 +255,10 @@ footer .widget.profile .bk-profile-socialicons span a {
             position: absolute;
         }
     }
+    
+    .language-selector__link {
+        padding-right: @font-swatch6-font-size*2.5;
+    }
 
     .language-selector__item {
         &--current {
@@ -245,12 +266,14 @@ footer .widget.profile .bk-profile-socialicons span a {
                 display: block;
                 content: "";
                 position: absolute;
-                right: 10px;
-                top: 43%;
-                border: 5px solid transparent;
+                right: @font-swatch6-font-size+@font-swatch6-font-size/6;
+                top: 50%;
+                margin-top: -(@font-swatch6-font-size/6);
+                border: @font-swatch6-font-size/3 solid transparent;
             }
         }
     }
+	
     &.language-selector--light {
         .language-selector__item {
             &--current {
@@ -269,21 +292,46 @@ footer .widget.profile .bk-profile-socialicons span a {
             }
         }
     }
-    
-    .language-selector__icon {
-        line-height: inherit;
-        float: left;
-    }
 
     .language-selector__name,
     .language-selector__localised-name {
-        @media only screen and (max-width: 300px) {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 150px;
-            display: block;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        @media only screen and (max-width: 1600px) {
+            max-width: 900px;
         }
+        
+        @media only screen and (max-width: 1200px) {
+            max-width: 750px;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            max-width: 500px;
+        }
+        
+        @media only screen and (max-width: 800px) {
+            max-width: 400px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            max-width: 250px;
+        }
+        
+        @media only screen and (max-width: 460px) {
+            max-width: 150px;
+        }
+        
+        @media only screen and (max-width: 380px) {
+            max-width: 100px;
+        }
+    }
+    
+    &.language-selector--flag-text .language-selector__icon {
+        display: inline;
+        float: left;
     }
 }
 
@@ -297,21 +345,13 @@ footer .widget.profile .bk-profile-socialicons span a {
         
         .language-selector__link {
             background-color: transparent;
-            padding: 10px 20px;
-        
-            @media @tablet {
-                padding: 5px 20px;
-            }
+            padding: @language-padding*2 @language-padding*4;
         }
     }
     
     .language-selector.language-selector--dropdown & {
         .language-selector__link {
-            padding: 10px 30px 10px 20px;
-        
-            @media @tablet {
-                padding: 5px 20px;
-            }
+            padding: @language-padding*2 @language-padding*8 @language-padding*2 @language-padding*4;
         }
     }
     
@@ -370,6 +410,8 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
+
+
 /* ===============================
    STANDARD NAVIGATION
    =============================== */
@@ -418,6 +460,8 @@ footer .widget.profile .bk-profile-socialicons span a {
   color: @color-swatch3;
 }
 
+
+
 /* ===============================
    EXTENDED NAVIGATION
    =============================== */
@@ -453,7 +497,8 @@ footer .widget.profile .bk-profile-socialicons span a {
     color: @color-swatch4;
 }
 
-.widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
+.widget.extendednavigation ul li a,
+.widget.extendednavigation ul li.folder .text {
   display: block;
   padding: 16px 26px;
   margin: 0;
@@ -463,7 +508,15 @@ footer .widget.profile .bk-profile-socialicons span a {
   color: @font-swatch6-color;
   line-height:@font-swatch6-line-height;
   letter-spacing: @font-swatch6-letter-spacing;
-  
+}
+
+.widget .extendednavigation ul li.folder > .text {
+	padding-right: @font-swatch6-font-size*2;
+
+	@media @tablet {
+		padding-left: @font-swatch6-font-size*2;
+		padding-right: @font-swatch6-font-size*2;
+	}
 }
 
 .widget.extendednavigation ul li a:hover, .widget.extendednavigation ul li.folder:hover {
@@ -472,19 +525,26 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 .widget.extendednavigation ul li.folder {
-  padding-right: 12px;
   background-image: none;
   background-position: right center;
   background-repeat: no-repeat;
   cursor: pointer;
   margin-right: 0;
+	
   &:after {
-	right: 16px;
-	top: 46%;
+	display: block;
+	content: "";
+	position: absolute;
+	right: @font-swatch6-font-size/2+@font-swatch6-font-size/6;
+	top: 50%;
+	margin-top: -(@font-swatch6-font-size/6);
+	border: @font-swatch6-font-size/3 solid transparent;
+	border-top-color: @font-swatch6-color;
   }
 }
 
-.widget.extendednavigation ul li a:hover, .widget.extendednavigation ul li.folder .text:hover {
+.widget.extendednavigation ul li a:hover,
+.widget.extendednavigation ul li.folder .text:hover {
   color: @font-swatch6-color-hover;
 }
 
@@ -498,12 +558,8 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 .widget.extendednavigation ul li:hover > ul {
-  display: block;
-  width: 186px;
-  position: absolute;
   background-color: @font-swatch6-background-color;
   z-index: 500;
-  margin-top: 0;
 }
 
 .widget.extendednavigation ul li:hover > ul > li {
@@ -519,6 +575,9 @@ footer .widget.profile .bk-profile-socialicons span a {
 .widget.extendednavigation ul li:hover > ul > li > a .text {
   margin-left: 0;
   color: @color-swatch5;
+  overflow: inherit;
+  text-overflow: inherit;
+  word-wrap: break-word;
 }
 
 .widget.extendednavigation ul li:hover > ul > li > a:hover {
@@ -545,6 +604,8 @@ footer .widget.profile .bk-profile-socialicons span a {
 .main .widget.extendednavigation {
     *zoom: 1;
 }
+
+
 
 /* ===============================
    FEATURE
@@ -599,11 +660,6 @@ footer .widget.profile .bk-profile-socialicons span a {
 
 
 
-
-
-
-
-
 /* ===============================
    GALLERY
    =============================== */
@@ -655,7 +711,6 @@ footer .widget.profile .bk-profile-socialicons span a {
    CONTENT CSS
    =============================== */
 
-
 .widget.content {
     padding: 0;
     overflow: hidden;
@@ -666,6 +721,8 @@ footer .widget.profile .bk-profile-socialicons span a {
 .widget.content span.expand:focus {
     cursor: pointer;
 }
+
+
 
 /* ===============================
    IMAGE WIDGET
@@ -704,15 +761,10 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 
+
 /* ===============================
    GALLERY WIDGET
    =============================== */
-
-
-
-
-
-
 
 /* Lightbox */
 
@@ -727,6 +779,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 .lb-data .lb-number {
   font-size:bkscale(@font-swatch5-font-size,0.9);
 }
+
 
 
 /* ===============================
@@ -846,6 +899,7 @@ hr.line.align-right {
 }
 
 
+
 /* ===============================
    TWITTER WIDGET
    =============================== */
@@ -955,16 +1009,10 @@ hr.line.align-right {
 
 
 
-
-
-
-
 /* ===============================
    CLICK TO CALL - ONLY SHOWS IN IPHONE
    =============================== */
-
-
-
+   
 .widget.clicktocall {
   a, a:hover {
     padding: 0 1.6em;
@@ -991,13 +1039,9 @@ hr.line.align-right {
 
 
 
-
-
 /* ===============================
    CONTACT FORM WIDGET
    =============================== */
-
-
 
 .contactform, .advancedcontactform {
   form {
@@ -1021,8 +1065,6 @@ hr.line.align-right {
     }
   }
 }
-
-
 
 
 
@@ -1133,9 +1175,7 @@ hr.line.align-right {
 }
 
 
-  
-
-
+ 
 /* ===============================
    TWEET THIS WIDGET
    =============================== */
@@ -1256,6 +1296,8 @@ hr.line.align-right {
 .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
     background-image: image('/images/social/socialicons-youtube.png')
 }
+
+
 
 /* ===============================
    PROFILE WIDGET
@@ -1397,8 +1439,6 @@ hr.line.align-right {
 
 
 
-
-
 /* ===============================
    MAP WIDGET
    =============================== */
@@ -1412,7 +1452,6 @@ hr.line.align-right {
 .widget.map .map {
 
 }
-
 
 
 
@@ -1587,80 +1626,75 @@ hr.line.align-right {
 
 
 
-
-
-
-
-
 /* ===============================
    IPAD WIDTH
    =============================== */
 
 @media only screen and (max-width: 768px) {
 
-  header.bk-header .header-bg {
-    padding: 62px 0 82px;
-  }
+	header.bk-header .header-bg {
+		padding: 62px 0 82px;
+	}
 
-  header.bk-header nav {
-    min-height: 36px;
-  }
+	header.bk-header nav {
+		min-height: 36px;
+	}
 
-  .widget.companyheader {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
+	.widget.companyheader {
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
 
-  .widget.companyheader .company-name {
-    text-align: center;
-  }
+	.widget.companyheader .company-name {
+		text-align: center;
+	}
 
-  .widget.companyheader .company-name h1 {
-    font-size:bkscale(@font-swatch1-font-size, 0.4)
-  }
+	.widget.companyheader .company-name h1 {
+		font-size:bkscale(@font-swatch1-font-size, 0.4)
+	}
 
-  /* NAV */
+	/* NAV */
 
-  .widget.extendednavigation {
-    width: 100%;
-    padding: 0;
-  }
-  .widget .extendednavigation {
-    display: table;
-    *display: block;
-    *float: left;
-    width: 100%;
-    margin-top: 10px;
-  }
+	.widget.extendednavigation {
+		width: 100%;
+		padding: 0;
+	}
+	.widget .extendednavigation {
+		display: table;
+		*display: block;
+		*float: left;
+		width: 100%;
+		margin-top: 10px;
+	}
 
-  /* NAV ICON */
+	/* NAV ICON */
 
-  .widget .extendednavigation a.pull {
-    display: block;
-    position: absolute;
-    top: 0;
-  	right: 0;
-  	width: 24px;
-  	height: 24px;
-  }
+	.widget .extendednavigation a.pull {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 24px;
+		height: 24px;
+	}
 
-    .widget .extendednavigation a.pull:after {
-    width: 24px;
-    height: 2px;
-    background: @color-swatch1;
-    top: 0;
-    right: 0;
-    box-shadow: 0 7px 0 @color-swatch1, 0 14px 0 @color-swatch1;
-  }
+	.widget .extendednavigation a.pull:after {
+		width: 24px;
+		height: 2px;
+		background: @color-swatch1;
+		top: 0;
+		right: 0;
+		box-shadow: 0 7px 0 @color-swatch1, 0 14px 0 @color-swatch1;
+	}
 
-  .main .widget .extendednavigation a.pull {
-    display: none;
-  }
+	.main .widget .extendednavigation a.pull {
+		display: none;
+	}
 
-  #page-zones__template-widgets__extendednavigation-navigationheader {
-    overflow: visible;
-  }
+	#page-zones__template-widgets__extendednavigation-navigationheader {
+		overflow: visible;
+	}
 
     /* NAV */
 
@@ -1716,45 +1750,39 @@ hr.line.align-right {
 
     }
 
-  /* OTHER */
+	/* OTHER */
 
-  section.intro, section.main {
-    padding: 50px 0;
-  }
+	section.intro, section.main {
+		padding: 50px 0;
+	}
 
-  section.intro {
-    display: none;
-  }
+	section.intro {
+		display: none;
+	}
 
-  /* FEATURE */
+	/* FEATURE */
 
-   .widget.feature .feature-bgimg {
-    height: 300px; 
-    }
+	.widget.feature .feature-bgimg {
+		height: 300px; 
+	}
 
-  .widget.feature .content {
-    height: 300px;
-  }
+	.widget.feature .content {
+		height: 300px;
+	}
 
-  .widget.feature h2 {
-    line-height: 1;
-    font-size:bkscale(@font-swatch8-font-size, 0.8); 
-  }
+	.widget.feature h2 {
+		line-height: 1;
+		font-size:bkscale(@font-swatch8-font-size, 0.8); 
+	}
 
-  .widget.feature h3 {
-    font-size:bkscale(@font-swatch9-font-size, 0.8); 
-  }
+	.widget.feature h3 {
+		font-size:bkscale(@font-swatch9-font-size, 0.8); 
+	}
 
-    .widget.feature button {
-      font-size: .8em;
-      padding: 10px 14px;
-  }
-
-
-
-
-  
-
+	.widget.feature button {
+	  font-size: .8em;
+	  padding: 10px 14px;
+	}
 }
 
 
@@ -1791,9 +1819,6 @@ hr.line.align-right {
   .widget.contactform fieldset button.btn {
     width: 100%;
   }
-
-  
-
 
   /* COMPANY NAME */
 
