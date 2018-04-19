@@ -102,7 +102,7 @@
         "font6": {
             "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",
             "font-size": "13px",
-            "font-weight": "inherit",
+            "font-weight": "400",
             "line-height": "28px",
             "color": "@color-swatch1",
             "color-hover": "darken(@color-swatch1,5%)",

@@ -210,6 +210,10 @@ footer .widget.profile .bk-profile-socialicons span a {
         font-weight: @font-swatch6-font-weight;
         line-height: @font-swatch6-line-height;
         letter-spacing: @font-swatch6-letter-spacing;
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+        font-smooth: auto;
+        text-rendering: auto;
     }
     
     &.language-selector--flag-text .language-selector__name {
@@ -391,6 +395,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 }
 
 /* LANGUAGE SELECTOR TEXT */
+
 .language-selector__link {
     .language-selector.language-selector--horizontal & {
         text-align: right;
