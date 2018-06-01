@@ -211,6 +211,7 @@ footer .widget.profile .bk-profile-socialicons span a {
         font-weight: @font-swatch6-font-weight;
         line-height: @font-swatch6-line-height;
         letter-spacing: @font-swatch6-letter-spacing;
+        color: @font-swatch6-color;
         -webkit-font-smoothing: auto;
         -moz-osx-font-smoothing: auto;
         font-smooth: auto;
@@ -366,6 +367,7 @@ footer .widget.profile .bk-profile-socialicons span a {
     
     .language-selector.language-selector--light &,
     .language-selector--dropdown.language-selector--light & {
+        
         .language-selector__link:hover {
             background-color: lighten(@color-swatch2,70%);
         }
@@ -374,6 +376,18 @@ footer .widget.profile .bk-profile-socialicons span a {
             .language-selector__link,
             .language-selector__link:hover {
                 background-color: lighten(@color-swatch2,70%);
+            }
+        }
+        
+        .language-selector__name,
+        .language-selector__localised-name {
+            color: lighten(@color-swatch2,70%);
+        }
+        
+        &--current {
+            .language-selector__name,
+            .language-selector__localised-name {
+                color: @color-swatch1;
             }
         }
     }
@@ -403,16 +417,6 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
     .language-selector.language-selector--dropdown & {
         text-align: left;
-    }
-}
-
-.language-selector__name,
-.language-selector__localised-name {
-    .language-selector--dropdown.language-selector--light & {
-        font-size: @color-swatch4;
-    }
-    .language-selector--dropdown.language-selector--dark & {
-        font-size: @color-swatch1;
     }
 }
 
@@ -480,6 +484,12 @@ footer .widget.profile .bk-profile-socialicons span a {
     background-color: @color-swatch3;
     @media @tablet {
       min-height: 0;
+    }
+    
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
     }
 }
 
