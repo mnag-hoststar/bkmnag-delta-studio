@@ -194,7 +194,7 @@ footer .widget.profile .bk-profile-socialicons span a {
     
     .language-selector__link {
         box-sizing: border-box;
-        padding: @language-padding*2 @language-padding*4;
+        padding: 0 @language-padding*4;
         min-height: @font-swatch6-line-height;
         border: none;
     }
@@ -216,6 +216,16 @@ footer .widget.profile .bk-profile-socialicons span a {
         -moz-osx-font-smoothing: auto;
         font-smooth: auto;
         text-rendering: auto;
+    }
+
+    .language-selector__name,
+    .language-selector__localised-name,
+    .language-selector__icon {
+        padding-top: @language-padding*2;
+        padding-bottom: @language-padding*2;
+    }
+    .language-selector__icon {
+        line-height: 1;
     }
     
     &.language-selector--flag-text .language-selector__name {
@@ -305,6 +315,8 @@ footer .widget.profile .bk-profile-socialicons span a {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding-top: @language-padding*2;
+        padding-bottom: @language-padding*2;
         
         @media only screen and (max-width: 1600px) {
             max-width: 900px;
@@ -351,13 +363,13 @@ footer .widget.profile .bk-profile-socialicons span a {
         
         .language-selector__link {
             background-color: transparent;
-            padding: @language-padding*2 @language-padding*4;
+            padding: 0 @language-padding*4;
         }
     }
     
     .language-selector.language-selector--dropdown & {
         .language-selector__link {
-            padding: @language-padding*2 @language-padding*8 @language-padding*2 @language-padding*4;
+            padding: 0 @language-padding*8 0 @language-padding*4;
         }
     }
     
@@ -369,19 +381,27 @@ footer .widget.profile .bk-profile-socialicons span a {
     .language-selector--dropdown.language-selector--light & {
         
         .language-selector__link:hover {
-            background-color: lighten(@color-swatch2,70%);
+            background-color: @color-swatch3;
+                .language-selector__name,
+                .language-selector__localised-name {
+                    color: @color-swatch1;
+                }
         }
         
         &.language-selector__item--current {
             .language-selector__link,
             .language-selector__link:hover {
-                background-color: lighten(@color-swatch2,70%);
+                background-color: @color-swatch3;
+                .language-selector__name,
+                .language-selector__localised-name {
+                    color: @color-swatch1;
+                }
             }
         }
         
         .language-selector__name,
         .language-selector__localised-name {
-            color: lighten(@color-swatch2,70%);
+            color: @color-swatch2;
         }
         
         &--current {
