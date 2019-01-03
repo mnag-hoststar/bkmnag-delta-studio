@@ -1,6 +1,11 @@
 // =============================================================================================
 // FORMS
 
+.widget.signupform {
+	padding: 30px;
+  	background-color: lighten(@color-swatch2,70%);
+}
+
 // Buttons
 .widget.feature .feature-bgimg .content button,
 .contactform button.btn,
@@ -152,6 +157,10 @@ textarea {
 	} 
 }
 
+.widget.signupform .form-group label[for="email"] {
+	display: none;
+}
+
 
 // Selects
 .widget.ecomproductslist .productlist-filter,
@@ -170,7 +179,6 @@ textarea {
 		background-color: @color-swatch1;
 		color: @color-swatch5;
 		border-radius: 0;
-		position: relative;
 		display: inline-block;
 		font-family: @font-swatch7-font-family;
 		font-size: @font-swatch7-font-size;
@@ -226,3 +234,41 @@ input:-ms-input-placeholder {
    color:    lighten(@color-swatch5,15%);
 }
 
+//Termns Checkbox
+.widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
+.widget.contactform .form-group.contactform__form-group--terms,
+.widget.signupform .form-group.signupform__form-group--terms {
+	input[type="checkbox"] {
+		margin: 4px 12px 4px 4px;
+		height: auto !important;
+		width: auto !important;
+		min-height: auto;
+		min-width: auto;
+		opacity: 1;
+		-webkit-appearance: checkbox;
+		-moz-appearance: checkbox;
+		appearance: checkbox;
+	}
+	
+	label {
+		padding-bottom: 0;
+		
+		&:before {
+			display: none;
+		}
+		
+		.form__link {
+			font-family:@font-swatch1-font-family;
+			font-size:@font-swatch4-font-size;
+			font-weight:@font-swatch4-font-weight;
+			line-height:@font-swatch4-line-height;
+			letter-spacing: @font-swatch4-letter-spacing;
+			color: @color-swatch4;
+
+			@media only screen and (max-width : 460px) {
+				line-height: bkscale(@font-swatch4-line-height, 0.8);
+				font-size:bkscale(@font-swatch4-font-size, 0.8);
+			}
+		}
+	}
+}
