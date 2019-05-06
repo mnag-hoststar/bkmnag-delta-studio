@@ -32,7 +32,7 @@ body {
 }
 
 title {
-  display: block!important;
+  display: block !important;
 }
 
 
@@ -89,10 +89,12 @@ header.bk-header .header-bg {
 }
 
 .widget.companyname a {
-  display: inline-block;
+  display: inline;
   border-bottom: 1px solid @color-swatch1;
   padding: 0 0 10px;
   text-align: center;
+  line-height: 2em;
+  word-wrap: break-word;
 }
 
 .widget.companyname a:hover {
@@ -102,9 +104,13 @@ header.bk-header .header-bg {
 
 /* LOGO */
 
-.widget.logo img {
-  display: block;
-  margin: 0 auto;
+.widget.logo {
+	margin-bottom: 20px;
+	
+	img {
+	  display: block;
+	  margin: 0 auto;
+	}
 }
 
 
