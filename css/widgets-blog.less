@@ -6,6 +6,19 @@
 .widget.blogsearch {
 	 padding: 15px;
      background-color: lighten(@color-swatch2,70%);
+
+     .style--light & {
+        background-color: darken(@color--light, 15%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 15%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--dark, 7%);
+    }
+
     form {
 		.form-group {
 			// Flex
@@ -39,7 +52,6 @@
 			align-items: center;
 		}
 	
-
         label {
         	// Flex
 			-webkit-box-ordinal-group: 1;
@@ -117,6 +129,19 @@
 			position: relative;
 			margin-bottom: 70px;
 			padding-bottom: 30px;
+
+			.style--light & {
+		        border-color: darken(@color--light, 15%);
+		    }
+
+		    .style--accent & {
+		        border-color: darken(@color--accent, 15%);
+		    }
+
+		    .style--dark & {
+		        border-color: darken(@color--dark, 15%);
+		    }
+
 			@media @mobile {
 				margin-bottom: 20px;
 			}
@@ -157,36 +182,66 @@
 				a {
 					color: @color-swatch3;
 					text-decoration: none;
+
+					.style--light & {
+				        color: @contrast--light;
+				    }
+
+				    .style--accent & {
+				        color: @contrast--accent;
+				    }
+
+				    .style--dark & {
+				        color: @contrast--dark;
+				    }
 					&:hover {
 					    border-bottom: 1px solid @color-swatch3;
 					    text-decoration: none;
+
+					    .style--light & {
+					        border-color: @contrast--light;
+					    }
+
+					    .style--accent & {
+					        border-color: @contrast--accent;
+					    }
+
+					    .style--dark & {
+					        border-color: @contrast--dark;
+					    }
 					}
 				}
 			}
 
 			.blog-post-summary, .blog-post-body {
 				margin-bottom: 1em;
-				
 			}
 
 			.blog-post-more-link {
 				float: left;
 				width: auto;
-				a {
-										
-				}
 			}
 			.blog-post-date {
 				float: right;				
-				
+			}
+
+			.blog-post-published-date {
+				.style--light & {
+			        color: @contrast--light;
+			    }
+
+			    .style--accent & {
+			        color: @contrast--accent;
+			    }
+
+			    .style--dark & {
+			        color: @contrast--dark;
+			    }
 			}
 		}
 	}
 	.blog-list-footer {
 		padding: 0;
-		a {
-
-		}
 	}
 }
 
