@@ -51,10 +51,55 @@ h6 {
   line-height: bkscale(@font-swatch4-line-height, 0.8);
 }
 
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+.blog-post-title a,
+blockquote:before {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
 // Normal text
 
 p {
   padding-bottom: 1em;
+}
+
+p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
+}
+
+[data-name="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // Conditional when text is bigger
