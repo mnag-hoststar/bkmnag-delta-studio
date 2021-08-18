@@ -69,8 +69,6 @@ h1, h2, h3, h4, h5, h6, a, p, ol, ul {
   border-top: 0;
 }
 
-
-
 /* ===============================
    HEADER
    =============================== */
@@ -122,8 +120,6 @@ header.bk-header .header-bg {
 	  margin: 0 auto;
 	}
 }
-
-
 
 /* ===============================
    FOOTER
@@ -179,8 +175,6 @@ footer .widget.profile .bk-profile-socialicons span a {
     	color: @color-swatch1;
     }
 }
-
-
 
 /* ===============================
    LANGUAGE SELECTOR
@@ -464,32 +458,24 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-
-
 /* ===============================
    STANDARD NAVIGATION
    =============================== */
-
-.widget.navigation {
-}
 
 .widget.navigation ul {
   padding: 0;
   margin: 20px 0 0;
 }
 
-.widget.navigation ul.align-center li
-{
+.widget.navigation ul.align-center li {
   text-align: center;
 }
 
-.widget.navigation ul.align-left li
-{
+.widget.navigation ul.align-left li {
   text-align: left;
 }
 
-.widget.navigation ul.align-right li
-{
+.widget.navigation ul.align-right li {
   text-align: right;
 }
 
@@ -513,8 +499,6 @@ footer .widget.profile .bk-profile-socialicons span a {
   text-decoration: none;
   color: @color-swatch3;
 }
-
-
 
 /* ===============================
    EXTENDED NAVIGATION
@@ -592,14 +576,14 @@ footer .widget.profile .bk-profile-socialicons span a {
   margin-right: 0;
 	
   &:after {
-	display: block;
-	content: "";
-	position: absolute;
-	right: @font-swatch6-font-size/2+@font-swatch6-font-size/6;
-	top: 50%;
-	margin-top: -(@font-swatch6-font-size/6);
-	border: @font-swatch6-font-size/3 solid transparent;
-	border-top-color: @font-swatch6-color;
+    display: block;
+    content: "";
+    position: absolute;
+    right: @font-swatch6-font-size/2+@font-swatch6-font-size/6;
+    top: 50%;
+    margin-top: -(@font-swatch6-font-size/6);
+    border: @font-swatch6-font-size/3 solid transparent;
+    border-top-color: @font-swatch6-color;
   }
 }
 
@@ -657,15 +641,15 @@ footer .widget.profile .bk-profile-socialicons span a {
 .main .widget.extendednavigation:after {
     content: " ";
     display: table;
-  }
+}
+
 .main .widget.extendednavigation:after {
     clear: both;
 }
+
 .main .widget.extendednavigation {
     *zoom: 1;
 }
-
-
 
 /* ===============================
    FEATURE
@@ -681,10 +665,6 @@ footer .widget.profile .bk-profile-socialicons span a {
   height: 500px;
 }
 
-.widget.feature .content .spare {
-
-}
-
 /* FEATURE TITLE */
 
 .widget.feature h2 {
@@ -698,8 +678,7 @@ footer .widget.profile .bk-profile-socialicons span a {
   text-transform: uppercase;
 }
 
-.widget.feature button
-{
+.widget.feature button {
   margin: 2em 0;
   padding: 16px 28px;
   border: 0;
@@ -712,24 +691,20 @@ footer .widget.profile .bk-profile-socialicons span a {
   
 }
 
-.widget.feature button:hover 
-{
+.widget.feature button:hover {
     background-color: darken(@color-swatch3, 50%);
     cursor: pointer;
 }
-
-
 
 /* ===============================
    GALLERY
    =============================== */
 
 .widget.gallery {
- 
   .inner {
     background-color: @color-swatch1;
+
     .title, .description {
-      
       color: @font-swatch7-color;
     }
   }
@@ -765,8 +740,6 @@ footer .widget.profile .bk-profile-socialicons span a {
   }
 }
 
-
-
 /* ===============================
    CONTENT CSS
    =============================== */
@@ -776,13 +749,10 @@ footer .widget.profile .bk-profile-socialicons span a {
     overflow: hidden;
 }
 
-
 .widget.content span.expand:hover,
 .widget.content span.expand:focus {
     cursor: pointer;
 }
-
-
 
 /* ===============================
    IMAGE WIDGET
@@ -841,8 +811,6 @@ footer .widget.profile .bk-profile-socialicons span a {
     }
 }
 
-
-
 /* ===============================
    GALLERY WIDGET
    =============================== */
@@ -860,8 +828,6 @@ footer .widget.profile .bk-profile-socialicons span a {
 .lb-data .lb-number {
   font-size:bkscale(@font-swatch5-font-size,0.9);
 }
-
-
 
 /* ===============================
    DIVIDER WIDGET
@@ -902,8 +868,6 @@ hr.line.align-right {
    margin: 20px 0px 20px auto;
 }
 
-
-
 // ======= Widget: Yelp Review
 .widget.yelpreview {
   // reset
@@ -912,12 +876,15 @@ hr.line.align-right {
     padding: 0;
     margin: 0;
   }
+  
   ul.yelpreview li {
     margin-bottom: 2em;
+
     &:last-of-type {
       margin-bottom: 0;
     }
   }
+
   .review-body {
     .rating {
       display: inline-block;
@@ -926,17 +893,14 @@ hr.line.align-right {
       background: #fff;
       padding: 4px 3px 0 4px;
       border-radius: 4px;
-
-      img {
-
-      }
     }
+
     .created {
       display: inline-block;
       vertical-align: middle;
       color: @color-swatch5;
-
     }
+
     .review {
       display: block;
       margin-top: 0.5em;
@@ -968,20 +932,25 @@ hr.line.align-right {
         left: 24px;
       }
     }
+
     .reviewer {
       margin: 24px 0 0.5em 24px;
       font-size: bkscale(@font-swatch5-font-size, 1);
+
       @media @mobile {
         font-size: bkscale(@font-swatch5-font-size, 0.8);
       }
     }
+
     .review-link {
       margin-left: 24px;
       font-size: bkscale(@font-swatch5-font-size, 0.8);
+
       a { 
         background-color: @color-swatch3;
         color: @color-swatch1;
         padding: 0.2em 0.7em;
+
         &:hover {
           text-decoration: none;
           background-color: @font-swatch7-background-color-hover;
@@ -990,8 +959,6 @@ hr.line.align-right {
     }
   }
 }
-
-
 
 /* ===============================
    TWITTER WIDGET
@@ -1163,8 +1130,6 @@ hr.line.align-right {
   }
 }
 
-
-
 /* ===============================
    CLICK TO CALL - ONLY SHOWS IN IPHONE
    =============================== */
@@ -1190,10 +1155,7 @@ hr.line.align-right {
 
     }
   }
-
 }
-
-
 
 /* ===============================
    FORMS
@@ -1255,11 +1217,13 @@ select {
       padding: 15px;
     }
   }
+
   fieldset {
     border: none;
     padding: 0;
     margin: 0;
   }
+
   .form-group {
     margin-bottom: 1em;
     &:last-of-type {
@@ -1267,8 +1231,6 @@ select {
     }
   }
 }
-
-
 
 // ======= Widget: Sign up form
 .widget.signupform {
@@ -1302,8 +1264,6 @@ select {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
-
-     
 
       label {
         // Flex
@@ -1347,6 +1307,7 @@ select {
         -ms-flex-item-align: auto;
         align-self: auto;
     }
+
     button {
        -webkit-box-ordinal-group: 1;
         -moz-box-ordinal-group: 1;
@@ -1365,8 +1326,6 @@ select {
   }
 }
 
-
- 
 /* ===============================
    TWEET THIS WIDGET
    =============================== */
@@ -1378,8 +1337,6 @@ select {
 .widget.tweet a {
   background-image: image('/images/social/socialicons-twitter.png');
 }
-
-
 
 /* ==================================
    SOCIAL BAR WIDGET / SOCIAL PROFILE
@@ -1486,7 +1443,6 @@ select {
     background-image: image('/images/social/socialicons-youtube.svg')
 }
 
-
 /* ===============================
    PROFILE WIDGET
    =============================== */
@@ -1532,7 +1488,9 @@ select {
       padding: 15px;
       background-color: lighten(@color-swatch2,70%);
       .form-group {
+
         // Flex parent
+
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -1562,9 +1520,7 @@ select {
         -ms-flex-align: center;
         align-items: center;
       }
-        
-        
-
+  
         label {
           display: block;
           margin-right: 0.5em;
@@ -1625,8 +1581,6 @@ select {
     }
 }
 
-
-
 /* ===============================
    MAP WIDGET
    =============================== */
@@ -1649,12 +1603,9 @@ select {
     }
 }
 
-
-
 /* ===============================
    RESPONSIVE SLIDESHOW WIDGET
    =============================== */
-
 
 .widget.responsiveslideshow {
   .slideshow-image-list {
@@ -1666,7 +1617,8 @@ select {
     margin-top: 0;
     -webkit-user-select: none;  
     -moz-user-select: none;     
-    -ms-user-select: none; 
+    -ms-user-select: none;    
+    user-select: none; 
     @media @mobile {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -1736,7 +1688,8 @@ select {
   .slideshow-widget {
     -webkit-user-select: none;  
     -moz-user-select: none;    
-    -ms-user-select: none;
+    -ms-user-select: none;   
+    user-select: none; 
 
     // Buttons prev/next
     .btn-next, .btn-prev {
@@ -1768,8 +1721,8 @@ select {
         position: absolute;
         top: 50%;
         margin: -17px 0 0 -17px;
-        
       }
+
       &:hover:after {
         background-color: darken(@color-swatch2, 10%);
       }
@@ -1790,8 +1743,8 @@ select {
       }
     }
 
-
     // Button play
+
     .btn-play {
       background-color:  @color-swatch7;
       color: @color-swatch1;
@@ -1820,18 +1773,20 @@ select {
       }
     }
   }
+
   .content-wrapper {
-    // (Appears even without content)
     position:absolute;
     bottom:0;
     left:0;
     right:0;
     top:auto;
+    background-color: @color-swatch7;
+
     .title, .description {
-      display: inline-block;
       float: left;
       padding: 3px 16px;
     }
+
     .title {
       font-weight: bold;
       color: @color-swatch2;
@@ -1844,6 +1799,7 @@ select {
         line-height: bkscale(@font-swatch5-line-height, 0.8);
       }
     }
+    
     .description {
       color: @color-swatch2;
       clear: both;
@@ -1981,20 +1937,12 @@ select {
         padding: 0;
     }
 
-    .widget.extendednavigation ul li:hover > ul li {
-      /* border-bottom: 0; */
-    }
-
     .widget.extendednavigation ul li:hover > ul li a {
         padding: 12px 18px;
     }
 
     .widget.extendednavigation ul li:hover > ul li a .text {
       padding: 0 26px;
-    }
-
-    .widget.extendednavigation ul li:hover > ul li:first-child {
-
     }
 
 	/* OTHER */
@@ -2074,7 +2022,6 @@ select {
     padding: 0;
   }
 
-
   /* FEATURE */
 
   .widget.feature .feature-bgimg {
@@ -2090,24 +2037,17 @@ select {
     padding-bottom: 4px;
   }
 
-  .widget.feature h3 {
-
-  }
-
   .widget.feature button {
     margin: 1em 0; 
     font-size: .7em;
     padding: 8px 12px;
   }
 
-
-
-    footer.bk-footer .columns-two-right .widget.profile span {
-      text-align: left;
-    }
+  footer.bk-footer .columns-two-right .widget.profile span {
+    text-align: left;
+  }
 
 }
-
 
 .clearfix:before,
 .clearfix:after {
