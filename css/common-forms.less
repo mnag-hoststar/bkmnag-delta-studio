@@ -1,4 +1,3 @@
-// =============================================================================================
 // FORMS
 
 .widget.signupform {
@@ -23,6 +22,7 @@
 }
 
 // Buttons
+
 .widget.feature .feature-bgimg .content button,
 .contactform button.btn,
 .advancedcontactform button,
@@ -46,14 +46,11 @@ a.contentgroup__link {
 	padding: 5px 20px;
 	display: inline-block;
 	cursor: pointer;
-	-webkit-user-select: none;  /* Chrome all / Safari all */
-	-moz-user-select: none;     /* Firefox all */
-	-ms-user-select: none;      /* IE 10+ */
 	user-select: none;
 	border-radius: 0;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
-	font-weight:@font-swatch7-font-weight;
+	font-weight: @font-swatch7-font-weight;
 	background-color: @font-swatch7-background-color;
 	color: @font-swatch7-color;
 	text-decoration: none;
@@ -110,22 +107,23 @@ a.contentgroup__link {
 	opacity: 0.5;
 }
 
-
 // Image buttons
+
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a,
 .widget.dropbox button,
 .widget.clicktocall a {
 	padding-left: 50px;
 	background-position: 18px center;
+
 	&:hover {
 		padding-left: 50px;
 		background-position: 18px center;
 	}
 }
 
-
 // Text Inputs
+
 input, select,
 .contactform input, .contactform textarea,
 .widget.profile form fieldset input.email,
@@ -174,6 +172,7 @@ textarea {
 }
 
 // Labels
+
 .contactform label,
 .advancedcontactform label,
 .signupform fieldset label,
@@ -211,8 +210,8 @@ textarea {
 	display: none;
 }
 
-
 // Selects
+
 .widget.ecomproductslist .productlist-filter,
 .widget.ecomcheckout .delivery,
 .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation {
@@ -254,6 +253,7 @@ textarea {
 }
 
 // Hides *custom* dropdown arrow in Firefox 30 and above
+
 @supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
 	.widget.ecomproductslist .productlist-filter,
 	.widget.ecomcheckout .delivery,
@@ -266,15 +266,16 @@ textarea {
 
 
 // Placeholders
+
 input::-webkit-input-placeholder {
   color:    lighten(@color-swatch5,15%);
 }
 
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder {
   color:    lighten(@color-swatch5,15%);
 }
 
-input::-moz-placeholder {  /* Firefox 19+ */
+input::-moz-placeholder {
   color:    lighten(@color-swatch5,15%);
 }
 
@@ -282,7 +283,8 @@ input:-ms-input-placeholder {
    color:    lighten(@color-swatch5,15%);
 }
 
-//Terms Checkbox
+// Terms Checkbox
+
 .widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
 .widget.contactform .form-group.contactform__form-group--terms,
 .widget.signupform .form-group.signupform__form-group--terms {
