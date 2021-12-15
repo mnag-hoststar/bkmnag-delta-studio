@@ -379,6 +379,7 @@ footer.bk-footer {
             }
         }
     }
+
     &.language-selector--dark {
         .language-selector__item {
             &--current {
@@ -1376,13 +1377,47 @@ select {
 
 // Radiobuttons, Checkboxes
 
-.contactform .option-item--radio,
-.contactform .option-item--checkbox,
-.advancedcontactform .option-item--radio,
-.advancedcontactform .option-item--checkbox {
-    label {
-        label;
-        word-break: break-word;
+.contactform,
+.advancedcontactform {
+    .form-group {
+        label.label {
+            display: block;
+        }
+    }
+
+    .option-item--radio,
+    .option-item--checkbox {
+        display: flex;
+        align-items: flex-start;
+    
+        label.label {
+            font-family: @font-swatch5-font-family;
+            font-size: @font-swatch5-font-size;
+            font-weight: @font-swatch5-font-weight;
+            line-height: @font-swatch5-line-height;
+            color: @color-swatch5;
+            letter-spacing: @font-swatch5-letter-spacing;
+            margin-bottom: 0.5em;
+            word-break: break-word;
+        
+            .style--light & {
+                color: @contrast--light;
+            }
+        
+            .style--accent & {
+                color: @contrast--accent;
+            }
+        
+            .style--dark & {
+                color: @contrast--dark;
+            }
+        }
+    
+        input {
+            margin: 0 1em 0 0;
+            height: @font-swatch5-line-height;
+            min-height: @font-swatch5-line-height;
+        }
     }
 }
 
