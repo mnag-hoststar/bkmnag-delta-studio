@@ -564,7 +564,7 @@ footer.bk-footer {
 
 // Extended Navigation
 
-.widget .extendednavigation {
+.widget.extendednavigation {
     .extendednavigation {
         text-align: center;
         text-transform: uppercase;
@@ -997,18 +997,19 @@ footer.bk-footer {
 // GALLERY
 
 // Lightbox
-
-.lb-data .lb-caption,
-.lb-data .lb-number {
-    font-family:@font-swatch5-font-family;
-    font-size:@font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height:@font-swatch5-line-height;
-    color:lighten(@font-swatch5-color,50%);
-}
-
-.lb-data .lb-number {
-    font-size:bkscale(@font-swatch5-font-size,0.9);
+.lb-data {
+    .lb-caption,
+    .lb-number {
+        font-family:@font-swatch5-font-family;
+        font-size:@font-swatch5-font-size;
+        font-weight: @font-swatch5-font-weight;
+        line-height:@font-swatch5-line-height;
+        color:lighten(@font-swatch5-color,50%);
+    }
+    
+    .lb-number {
+        font-size:bkscale(@font-swatch5-font-size,0.9);
+    }
 }
 
 // DIVIDER
@@ -1525,9 +1526,6 @@ select {
 .widget.tweet a {
     background-image: image('/images/social/socialicons-twitter.png');
     background-image: image('/images/social/socialicons-twitter.svg');
-
-    .svg & {
-    }
 }
 
 // SOCIAL BAR / SOCIAL PROFILE
@@ -1969,7 +1967,8 @@ select {
         top:auto;
         background-color: @color-swatch7;
 
-        .title, .description {
+        .title,
+        .description {
             float: left;
             padding: 3px 16px;
         }
@@ -2015,14 +2014,16 @@ select {
 
 // CLEARFIX
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
 .clearfix {
     *zoom: 1;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
 }
