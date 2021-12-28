@@ -71,8 +71,24 @@ blockquote:before {
 
 // Normal Text
 
-p {
-    padding-bottom: 1em;
+.widget {
+	p, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @font-swatch5-color;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
 }
 
 p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
@@ -89,6 +105,13 @@ p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
     }
 }
 
+html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
+    font-size: bkscale(@font-swatch5-font-size, 1);
+    line-height: bkscale(@font-swatch5-line-height, 1);
+    .make-font-a-little-smaller();
+    .make-font-smaller();
+}
+
 [data-name="content"] a:not(.contentgroup__link) {
     .style--light & {
         color: @contrast--light;
@@ -101,6 +124,48 @@ p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
     .style--dark & {
         color: @contrast--dark;
     }
+}
+
+// Preformatted and Code Text
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border: none;
+	.border-radius(0);
+	background-color: darken(@color-swatch1, 10%);
+	overflow: auto;
+	.paragraph;
+	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
+}
+
+code {
+	border-left: 1px solid @color-swatch5;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
 }
 
 // Conditional when text is bigger
@@ -123,9 +188,20 @@ p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
     }
 }
 
-html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
-    font-size: bkscale(@font-swatch5-font-size, 1);
-    line-height: bkscale(@font-swatch5-line-height, 1);
-    .make-font-a-little-smaller();
-    .make-font-smaller();
+// Blockquote
+
+blockquote {
+	padding: 30px;
+	word-break: break-word;
+	
+	&:before {
+		content: open-quote !important;
+		left: -10px !important;
+		position: relative !important;
+		font-family: georgia, serif !important;
+		font-size: 3.05em !important;
+		top: 20px !important;
+	}
+}
+
 }
