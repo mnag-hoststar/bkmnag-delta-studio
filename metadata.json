@@ -106,7 +106,7 @@
             "font-weight": "400",
             "line-height": "28px",
             "color": "@color-swatch1",
-            "color-hover": "darken(@color-swatch1,5%)",
+            "color-hover": "darken(@color-swatch1, 5%)",
             "letter-spacing": "1px",
             "background-color": "@color-swatch3",
             "background-color-hover": "@color-swatch2"
@@ -119,7 +119,7 @@
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3,5%)"
+            "background-color-hover": "darken(@color-swatch3, 5%)"
         },
         "font8": {
             "font-family": "\"Roboto\", Geneva, \"Lucida Console\", sans-serif",

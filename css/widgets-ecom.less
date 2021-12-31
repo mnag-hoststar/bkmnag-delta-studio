@@ -362,8 +362,8 @@
     margin-bottom: 0;
     position: relative;
     overflow: visible;
-    border: 20px solid mix(@color-swatch3, #fff, 6%);
-    background-color: mix(@color-swatch3, #fff, 6%);
+    border: 20px solid mix(@color-swatch3, @color-swatch1, 6%);
+    background-color: mix(@color-swatch3, @color-swatch1, 6%);
     background-position: center;
 
     .style--light & {
@@ -382,7 +382,7 @@
     }
 
     @media @mobile {
-        border: 10px solid mix(@color-swatch3, #fff, 6%);
+        border: 10px solid mix(@color-swatch3, @color-swatch1, 6%);
         height: 150px;
 
         .style--light & {
@@ -408,7 +408,7 @@
 .widget.ecomfeaturedproducts .ecom-featuredproducts-title {
     flex-grow: 1;
     font-size: bkscale(@font-swatch4-font-size, 1);
-    border-bottom: 3px solid mix(@color-swatch2, #fff, 6%);
+    border-bottom: 3px solid mix(@color-swatch2, @color-swatch1, 6%);
     padding: 0.5em 0;
     color: @color-swatch3;
 
@@ -561,7 +561,7 @@
 
                 .ecom-product-add-to-cart-btn {
                     &.added {
-                        background-color: #b9c20a;
+                        background-color: @font-swatch7-background-color-hover;
                     }
                 }
             }
@@ -659,7 +659,7 @@
             th {
                 border-bottom: 1px solid @color-swatch2;
                 &:nth-child(2) {
-                    border-right: 1px solid mix(@color-swatch2, #fff, 10%);
+                    border-right: 1px solid mix(@color-swatch2, @color-swatch1, 10%);
                 }
             }
         }
@@ -721,7 +721,7 @@
                 padding-right: 170px;
                 vertical-align: top;
                 position: relative;
-                border-right: 1px solid mix(@color-swatch2, #fff, 10%);
+                border-right: 1px solid mix(@color-swatch2, @color-swatch1, 10%);
 
                 @media @bp-checkout-compact {
                     padding-right: 0;
@@ -744,7 +744,7 @@
                     }
 
                     &:hover {
-                        background-color: mix(@color-swatch2, #fff, 6%);
+                        background-color: mix(@color-swatch2, @color-swatch1, 6%);
                     }
                 }
 
