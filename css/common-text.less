@@ -187,8 +187,11 @@ p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
 html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
     font-size: bkscale(@font-swatch5-font-size, 1);
     line-height: bkscale(@font-swatch5-line-height, 1);
-    .make-font-a-little-smaller();
-    .make-font-smaller();
+
+    .make-font-a-little-smaller(@font__p--line-height);
+    .make-font-smaller(@font__p--line-height);
+    .make-line-height-a-little-smaller(@font__p--line-height);
+    .make-line-height-smaller(@font__p--line-height);
 }
 
 [data-name="content"] a:not(.contentgroup__link) {
