@@ -1082,11 +1082,28 @@ tr:last-child td {
 // GALLERY
 
 .widget.gallery {
-    .inner {
-        background-color: @color-swatch1;
+	ul li {
+		@media @tablet {
+			width: 50%;
+			padding-bottom: 50%;
+		}
 
-        .title, .description {
-            color: @font-swatch7-color;
+		@media @mobile {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+
+		.responsivecolumns & {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+
+        span.inner {
+            background-color: @color-swatch1;
+
+            .title, .description {
+                color: @font-swatch7-color;
+            }
         }
     }
 
