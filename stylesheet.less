@@ -553,20 +553,40 @@ footer.bk-footer {
         background-color: @color-swatch3;
 
         @media @tablet {
-            display: table;
-            *display: block;
-            *float: left;
+            display: block;
             width: 100%;
             margin-top: 10px;
             min-height: 0;
             padding: 0;
         }
+
+        // Mobile Menu
         
-        &:after {
-            content: "";
-            display: block;
-            clear: both;
+        a.pull {
+            display: none;
+
+            @media @tablet {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 24px;
+                height: 24px;
+            }
+            
+            &:after {
+                @media @tablet {
+                    width: 24px;
+                    height: 2px;
+                    background: @color-swatch1;
+                    top: 0;
+                    right: 0;
+                    box-shadow: 0 7px 0 @color-swatch1, 0 14px 0 @color-swatch1;
+                }
+            }
         }
+
+		// Menu Points
 
         ul {
             padding: 0;
@@ -578,10 +598,6 @@ footer.bk-footer {
                 width: 100%;
                 display: none;
                 padding: 36px 0 0 0;
-
-                &.open {
-                    display: block;
-                }
             }
 
             // Menu Point
@@ -633,7 +649,7 @@ footer.bk-footer {
                     }
                 }
 
-                // Folder Menu Point
+                // Folder
                 
                 &.folder {
                     background-image: none;
@@ -676,6 +692,8 @@ footer.bk-footer {
                         &:hover {
                             color: @font-swatch6-color-hover;
                         }
+
+						// Folder Arrow
                                      
                         &:after {
                             display: block;
@@ -689,90 +707,74 @@ footer.bk-footer {
                             border-top-color: @font-swatch6-color;
                         }
                     }
-                    
-                    &.folder-open {
-                        background-color: darken(@color-swatch3, 4%);
-
-                        > .text {
-                            &:after {
-                                margin-top: -(@font-swatch6-font-size/6);
-                                right: @font-swatch6-font-size*3/2;
-                                margin-right: -(@font-swatch6-font-size/3/2);
-                                border: @font-swatch6-font-size/3 solid transparent;
-                                border-top-color: @font-swatch6-color;
-                            }
-                        }
-                    }
-
-                    // Folder Menu
 
                     > ul,
                     &:hover > ul {
                         display: none;
+                        z-index: 500;
                         position: absolute;
-                        margin: 0;
-                        min-width: 186px;
-                        max-width: 300px;
+                        right: 0;
+                        left: auto;
+                        width: auto;
+                        min-width: 200px;
+                        max-width: 400px;
                         background-color: darken(@color-swatch3, 4%);
                         color: @font-swatch6-color-hover;
     
                         @media @tablet {
+							display: none;
                             position: static;
+                            width: 100%;
                             min-width: auto;
                             max-width: none;
+                            padding: 0;
+                        }
+
+                        > li {
+                            display: block;
+                            margin: 0;
+
+                            &:hover a {
+                                background-color: @font-swatch6-background-color-hover;
+                            }
                         }
 
                         &:hover a {
                             background-color: @font-swatch6-background-color-hover;
                         }
                     }
-                
-                    &.folder-open {
-                        > ul {
-                            z-index: 500;
-                            display: block !important;
-        
-                            @media @tablet {
-                                width: 100%;
-                                padding: 0;
-                            }
+	
+                    // Folder Open
+		
+                    &.folder-open ul,
+                    &.folder-open:hover ul {
+                        display: block;
+    
+                        @media @tablet {
+                            display: block;
+                        }
 
-                            > li {
+                        > .text {
+                            &:after {
                                 display: block;
-                                margin: 0;
-
-                                &:hover a {
-                                    background-color: @font-swatch6-background-color-hover;
-                                }
+                                content: "";
+                                position: absolute;
+                                top: 50%;
+                                right: 0.5em;
+                                border: 0.1em solid fade(@font-swatch6-color, 60%);
+                                transform: rotate(45deg);
+                                margin-top: -0.5em;
+                                width: 0.5em;
+                                height: 0.5em;
+                                border-top: transparent;
+                                border-left: transparent;
+                            }
+					
+                            &:hover:after {
+                                border-color: @font-swatch6-color-hover;
                             }
                         }
                     }
-                }
-            }
-        }
-
-        // Mobile Menu
-        
-        a.pull {
-            display: none;
-
-            @media @tablet {
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 24px;
-                height: 24px;
-            }
-            
-            &:after {
-                @media @tablet {
-                    width: 24px;
-                    height: 2px;
-                    background: @color-swatch1;
-                    top: 0;
-                    right: 0;
-                    box-shadow: 0 7px 0 @color-swatch1, 0 14px 0 @color-swatch1;
                 }
             }
         }
@@ -1211,6 +1213,7 @@ tr:last-child td {
 // GALLERY
 
 // Lightbox
+
 .lb-data {
     .lb-caption,
     .lb-number {
