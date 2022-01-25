@@ -139,17 +139,8 @@ a.contentgroup__link {
 
 input,
 textarea,
-.contactform input,
-.contactform textarea,
-.signupform fieldset input,
-.signupform fieldset input.email,
-.advancedcontactform input,
-.advancedcontactform textarea,
-.widget.profile form fieldset input,
-.blogsearch input.blog-search-input,
-.productlist-filter .productlist-search input,
-.widget input[type="text"],
-.widget input[type="email"],
+form input,
+form textarea,
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
 	background-color: @color-swatch1;
@@ -165,8 +156,20 @@ input:-webkit-autofill:focus {
     border: none;
     -webkit-appearance: none;
 
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
+
 	&:focus {
-		box-shadow: inset 0 0 0 1px lighten(@color-swatch5,20%);
+		box-shadow: inset 0 0 0 1px lighten(@color-swatch5, 20%);
 		outline: none;
 	}
 }
@@ -181,11 +184,10 @@ textarea {
 
 // Labels
 
-.contactform label,
-.advancedcontactform label,
-.signupform fieldset label,
-.blog-search-form label,
-.widget.ecomcheckout .delivery label,
+label,
+.label,
+.widget label,
+.widget .label,
 .ecom-product-vartitle {
     font-family: @font-swatch1-font-family;
     font-size: @font-swatch4-font-size;
