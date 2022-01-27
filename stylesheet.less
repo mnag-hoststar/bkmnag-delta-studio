@@ -2115,98 +2115,103 @@ select {
         }
     }
 
-    .slideshow-widget {
-        -webkit-user-select: none;  
-        -moz-user-select: none;    
-        -ms-user-select: none;   
-        user-select: none; 
+	.slideshow-widget {
+		.btn-play,
+		.btn-prev,
+		.btn-next {
+			position: absolute;
+			opacity: 1;
+			top: 50%;
+			border: none;
+			width: 60px;
+			height: 60px;
+			margin-top: -30px;
+			-webkit-transition: background-color 0.15s ease-in-out;
+			-moz-transition: background-color 0.15s ease-in-out;
+			-o-transition: background-color 0.15s ease-in-out;
+			transition: background-color 0.15s ease-in-out;
+			font-size: 0;
+			line-height: 0;
 
-        .btn-next, .btn-prev {
-            width: 60px;
-            height: 60px;
-            overflow: hidden;
-            text-indent: 110%;
-            white-space: nowrap;
-            background-color: @font-swatch7-color;
+			@media @tablet {
+				width: 50px;
+				height: 50px;
+			}
 
-            @media @mobile {
-                -webkit-transform: scale(0.75);
-                -moz-transform: scale(0.75);
-                -o-transform: scale(0.75);
-                -ms-transform: scale(0.75);
-                transform: scale(0.75);
-            }
-            
-            &:after {
-                display: block;
-                content: "";
-                width: 34px;
-                height: 34px;
-                text-align: center;
-                position: absolute;
-                color: #000;
-                background-image: image('/images/ui-slide-arrows.png');
-                background-color: @color-swatch3;
-                position: absolute;
-                top: 50%;
-                margin: -17px 0 0 -17px;
-            }
+			&:after {
+				content: '';
+				display: block;
+				background: transparent;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -5px;
+			}
+		}
 
-            &:hover:after {
-                background-color: darken(@color-swatch2, 10%);
-            }
-        }
+		.btn-play {
+    		left: 50%;
+			margin-left: -30px;
+			background-color: @color-swatch7;
 
-        .btn-next {
-            right: 0;
+			&:hover {
+				background-color: darken(@color-swatch7, 10%);
+			}
 
-            &:after {
-                background-position: right 0;
-                left: 52%;
-            }
-        }
+			&:after,
+			&.pause:after {
+				height: 0;
+				width: 0;
+				border: 10px solid transparent;
+				border-left: 15px solid @color-swatch1;
+				color: @color-swatch1;
+			}
 
-        .btn-prev {
-            left: 0;
+			&.pause:after {
+				height: 18px;
+				width: 6px;
+				margin-top: -9px;
+				margin-left: -6px;
+				border: none;
+				border-left: 3px solid @color-swatch1;
+				border-right: 3px solid @color-swatch1;
+			}
+		}
 
-            &:after {
-                left: 48%;
-            }
-        }
+		.btn-prev,
+		.btn-next {
+			background-color: @color-swatch1;
 
-        // Button play
+			&:after {
+				border: 3px solid black;
+				transform: rotate(45deg);
+				margin-top: -7px;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+				width: 12px;
+				height: 12px;
+			}
+		}
 
-        .btn-play {
-            background-color:  @color-swatch7;
-            color: @color-swatch1;
-            margin: 0 auto;
-            min-width: 30px;
-            top: 45%;
-            left: 0;
-            right: 0;
-            width: 60px;
-          
-            @media @mobile {
-                -webkit-transform: scale(0.75);
-                -moz-transform: scale(0.75);
-                -o-transform: scale(0.75);
-                -ms-transform: scale(0.75);
-                transform: scale(0.75);
-            }
+		.btn-prev {
+			&:after {
+				border-top: transparent;
+				border-right: transparent;
+				margin-left: -5px;
+				left: 50%;
+			}
+		}
 
-            &:after {
-                font-size: 16px;
-                
-                @media @tablet {
-                    font-size: 20px;
-                }
-            }
-
-            &:hover {
-                background-color: darken(@color-swatch7, 10%);
-            }
-        }
-    }
+		.btn-next {
+			&:after {
+				border-bottom: transparent;
+				border-left: transparent;
+				margin-right: -5px;
+				right: 50%;
+			}
+		}
+	}
 
     .content-wrapper {
         position:absolute;
