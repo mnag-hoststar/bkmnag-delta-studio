@@ -1542,6 +1542,41 @@ hr.line {
 
 // Dropdowns
 
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @tablet {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+
+	&:before {
+		content: '';
+		width: 2.2em;
+		height: 45px;
+		background: transparent;
+		right: 0;
+		display: block;
+		position: absolute;
+	
+		.style--light & {
+			background: transparent;
+		}
+	
+		.style--accent & {
+			background: fade(@contrast--accent, 20%);
+		}
+	
+		.style--dark & {
+			background: fade(@contrast--dark, 20%);
+		}
+	}
+}
+
 select {
     &,
     .widget.ecomproductslist .productlist-filter &, 
