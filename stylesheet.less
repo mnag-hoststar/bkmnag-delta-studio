@@ -4,7 +4,6 @@
 @import "@{templateLocal}/less/common-forms.less";
 @import "@{templateLocal}/less/common-text.less";
 @import "@{templateLocal}/less/widgets-blog.less";
-@import "@{templateLocal}/less/widgets-menu.less";
 @import "@{templateLocal}/less/widgets-ecom.less";
 
 @desktop: ~"only screen and (min-width: 769px)";
@@ -16,6 +15,27 @@
     -webkit-appearance: @appearance;
     -moz-appearance: @appearance;
     appearance: @appearance;
+}
+
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
 }
 
 // TEMPLATE CSS
@@ -1538,15 +1558,18 @@ hr.line {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @tablet {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 
 	&:before {
 		content: '';
@@ -1602,6 +1625,7 @@ select {
     .form-group {
         label.label {
             display: block;
+            word-break: break-word;
         }
     }
 
@@ -1873,6 +1897,7 @@ select {
             -webkit-align-self: auto;
             -ms-flex-item-align: auto;
             align-self: auto;
+            word-break: break-word;
 
             @media @mobile {
                 width: 100%;
