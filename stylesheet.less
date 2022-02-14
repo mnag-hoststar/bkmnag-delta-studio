@@ -1,11 +1,11 @@
 // IMPORT CSS
    
 @import "@{templateCommon}/basekit-bootstrap.less";
-@import "@{templateLocal}/css/common-forms.less";
-@import "@{templateLocal}/css/common-text.less";
-@import "@{templateLocal}/css/widgets-blog.less";
-@import "@{templateLocal}/css/widgets-menu.less";
-@import "@{templateLocal}/css/widgets-ecom.less";
+@import "@{templateLocal}/less/common-forms.less";
+@import "@{templateLocal}/less/common-text.less";
+@import "@{templateLocal}/less/widgets-blog.less";
+@import "@{templateLocal}/less/widgets-menu.less";
+@import "@{templateLocal}/less/widgets-ecom.less";
 
 @desktop: ~"only screen and (min-width: 769px)";
 @mobile-up: ~"only screen and (min-width: 480px)";
@@ -182,9 +182,7 @@ footer.bk-footer {
     .widget.profile span {
         font-size: bkscale(@font-swatch5-font-size,0.9);
         font-family: @font-swatch5-font-family;
-        color: lighten(@color-swatch3,30%);
-        line-height: 2em;
-        padding-bottom: 2px;
+        color: lighten(@color-swatch3, 30%);
     }
     
     .widget.profile {
@@ -199,14 +197,6 @@ footer.bk-footer {
         
         button {
             background-color: darken(@color-swatch3, 20%);
-        }
-        
-        .bk-profile-socialicons span a {
-            background-color: @color-swatch3;
-        
-            &:hover {
-                background-color: darken(@color-swatch3, 10%);
-            }
         }
     }
     
@@ -1163,6 +1153,10 @@ tr:last-child td {
         border-width: 0;
         margin: 0 auto;
     }
+    
+	a:hover {
+		text-decoration: none;
+	}
 
     span.image-title {
         display: block;
@@ -1785,107 +1779,6 @@ select {
             -ms-flex-item-align: auto;
             align-self: auto;
         }
-    }
-}
-
-// SOCIAL BAR / SOCIAL PROFILE
-
-.widget.socialicons,
-.widget.profile .bk-profile-socialicons {
-    padding: 9px 0;
-    font-size:1em;
-    font-family:@font-swatch7-font-family;
-
-    a {
-        text-decoration: none;
-        text-indent: 9999px;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    span a {
-        display: inline-block;
-        margin-right: 6px;
-        margin-bottom: 8px;
-        background-size: 22px;
-        width: 40px;
-        height: 40px;
-        background-color: @color-swatch3;
-        background-color: @font-swatch7-background-color;
-        background-repeat: no-repeat;
-        background-position: center;
-    
-        .style--light & {
-            background-color: @color--dark;
-            color: @contrast--dark;
-        }
-    
-        .style--accent & {
-            background-color: @color--dark;
-            color: @contrast--dark;
-        }
-    
-        .style--dark & {
-            background-color: @color--accent;
-            color: @contrast--accent;
-        }
-    }
-
-    // SVG ICONS
-    
-    span.bk-socialicons-twitter a {
-        background-image: image('/images/social/socialicons-twitter.svg');
-    }
-    
-    span.bk-socialicons-linkedin a {
-        background-image: image('/images/social/socialicons-linkedin.svg')
-    }
-    
-    span.bk-socialicons-facebook a {
-        background-image: image('/images/social/socialicons-facebook.svg')
-    }
-    
-    span.bk-socialicons-rss a {
-        background-image: image('/images/social/socialicons-rss.svg')
-    }
-    
-    span.bk-socialicons-googleplus a {
-        background-image: image('/images/social/socialicons-googleplus.svg')
-    }
-    
-    span.bk-socialicons-youtube a {
-        background-image: image('/images/social/socialicons-youtube.svg')
-    }
-}
-
-.widget.profile .bk-profile-socialicons {
-    span {
-        display: inline-block;
-
-        a {
-            background-color: @font-swatch7-background-color-hover;
-        }
-    }
-}
-
-.widget.socialicons span a:hover,
-.widget.profile 
-.bk-profile-socialicons span a:hover {
-    background-color: @font-swatch7-background-color-hover;
-
-    .style--light & {
-        background-color: darken(@color--dark, 10%);
-        color: @contrast--dark;
-    }
-
-    .style--accent & {
-        background-color: darken(@color--dark, 10%);
-        color: @contrast--dark;
-    }
-
-    .style--dark & {
-        background-color: darken(@color--accent, 10%);
-        color: @contrast--accent;
     }
 }
 

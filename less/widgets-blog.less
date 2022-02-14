@@ -419,20 +419,25 @@
 				}
 
 				span {
-					display: none;
-				}
-				
-				&.facebook {
-					background-image: image('/images/ico_s_facebook.png');
-				}
+					display: block;
+					line-height: 0;
+					font-size: 0;
 
-				&.twitter {
-					background-image: image('/images/ico_s_twitter.png');
+					&:after {
+						display: inline;
+						float: left;
+						width: 100%;
+						font-family: 'FontAwesome';
+						line-height: 38px;
+						text-indent: 0;
+						font-size: 24px;
+						text-align: center;
+					}
 				}
-
-				&.googleplus {
-					background-image: image('/images/ico_s_google+.png');
-				}
+	
+				&.facebook span:after {content: '\f09a'; color: #3b5998;}
+				&.twitter span:after {content: '\f099'; color: #00acee;}
+				&.googleplus {display: none;}
 			}
 		}
 	}

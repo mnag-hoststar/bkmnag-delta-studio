@@ -1,8 +1,8 @@
 {
-	"name":"Delta Studio",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"deltastudio-screenshot.jpg",
-	"templateType":"standard",
+	"name": "Delta Studio",
+	"thumbnail": "images/thumbnail.png",
+	"screenshot": "images/screenshot.jpg",
+	"templateType": "standard",
     "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
@@ -10,6 +10,11 @@
     "es": ["minimalista", "limpio", "moderno", "creativo", "tipográfico", "simple", "contemporaneo", "flexible", "estudio", "portafolio", "diseñador", "sans-serif"],
     "br": ["minimalista", "limpo", "moderno", "criativo", "tipográfico", "simples", "contemporâneo", "flexível", "estúdio", "portfolio", "designer", "sans-serif"]
     },
+	"images": [
+		"images/gallery/gallery-image--1.jpg",
+		"images/gallery/gallery-image--2.jpg",
+		"images/gallery/gallery-image--3.jpg"
+	],
     "colorSwatches":
     {
         "Swatch 1": {
