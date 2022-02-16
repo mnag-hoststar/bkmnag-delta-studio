@@ -130,10 +130,6 @@ h1, h2, h3, h4, h5, h6,
 .blog-post-title a,
 blockquote:before {
     word-break: break-word;
-    
-    .style--light & {
-        color: @contrast--light;
-    }
 
     .style--accent & {
         color: @contrast--accent;
@@ -158,7 +154,7 @@ blockquote:before {
 			color: @font-swatch5-color;
 		
 			.style--light & {
-				color: @contrast--light;
+				color: @font-swatch5-color;
 			}
 		
 			.style--accent & {
@@ -177,8 +173,10 @@ a, p, ol, ul {
 }
 
 p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
+	color: fade(@font-swatch5-color, 90%);
+
     .style--light & {
-        color: fade(@contrast--light, 90%);
+        color: fade(@font-swatch5-color, 90%);
     }
 
     .style--accent & {
@@ -201,8 +199,10 @@ html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
 }
 
 [data-name="content"] a:not(.contentgroup__link) {
+	color: @font-swatch5-color;
+
     .style--light & {
-        color: @contrast--light;
+		color: @font-swatch5-color;
     }
 
     .style--accent & {
@@ -227,7 +227,7 @@ pre, code {
 	font-family: monospace;
 
 	.style--light & {
-		background-color: fade(@contrast--light, 10%);
+		background-color: fade(@color-swatch1, 10%);
 	}
 
 	.style--accent & {
@@ -243,7 +243,7 @@ code {
 	border-left: 1px solid @color-swatch5;
 
 	.style--light & {
-		border-color: @contrast--light;
+		border-color: @color-swatch5;
 	}
 
 	.style--accent & {
@@ -291,7 +291,7 @@ blockquote {
 		color: fade(@font-swatch5-color, 50%);
 
 		.style--light & {
-			color: fade(@contrast--light, 50%);
+			color: fade(@font-swatch5-color, 50%);
 		}
 
 		.style--accent & {

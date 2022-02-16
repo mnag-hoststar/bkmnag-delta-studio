@@ -7,10 +7,10 @@
 
 .widget.blogsearch {
 	padding: 15px;
-	background-color: lighten(@color-swatch2,70%);
+	background-color: lighten(@color-swatch2, 70%);
 
     .style--light & {
-        background-color: darken(@color--light, 15%);
+        background-color: lighten(@color-swatch2, 70%);
     }
 
     .style--accent & {
@@ -125,7 +125,7 @@
 			padding-bottom: 30px;
 
 			.style--light & {
-		        border-color: darken(@color--light, 15%);
+		        border-color: @color-swatch6;
 		    }
 
 		    .style--accent & {
@@ -176,7 +176,7 @@
 					text-decoration: none;
 
 					.style--light & {
-				        color: @contrast--light;
+				        color: @color-swatch3;
 				    }
 
 				    .style--accent & {
@@ -192,7 +192,7 @@
 					    text-decoration: none;
 
 					    .style--light & {
-					        border-color: @contrast--light;
+					        border-color: @color-swatch3;
 					    }
 
 					    .style--accent & {
@@ -219,8 +219,10 @@
 			}
 
 			.blog-post-published-date {
+				color: @color-swatch3;
+
 				.style--light & {
-			        color: @contrast--light;
+					color: @color-swatch3;
 			    }
 
 			    .style--accent & {

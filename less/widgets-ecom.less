@@ -211,18 +211,6 @@
                 label {
                     display: block;
                     margin-bottom: 0.5em;
-
-                    .style--light & {
-                        color: @contrast--light;
-                    }
-
-                    .style--accent & {
-                        color: @contrast--accent;
-                    }
-
-                    .style--dark & {
-                        color: @contrast--dark;
-                    }
                 }
 
                 // Search Form
@@ -243,7 +231,7 @@
                     margin: 0 0.5em;
 
                     .style--light & {
-                        background-color: darken(@color--light, 15%);
+                        background-color: lighten(@color-swatch2, 70%);
                     }
 
                     .style--accent & {
@@ -367,8 +355,8 @@
     background-position: center;
 
     .style--light & {
-        background-color: @color--light;
-        border-color: lighten(@color--light, 7%);
+        background-color: mix(@color-swatch3, @color-swatch1, 6%);
+        border-color: mix(@color-swatch3, @color-swatch1, 6%);
     }
 
     .style--accent & {
@@ -386,17 +374,14 @@
         height: 150px;
 
         .style--light & {
-            background-color: @color--light;
-            border-color: lighten(@color--light, 7%);
+            border-color: mix(@color-swatch3, @color-swatch1, 6%);
         }
 
         .style--accent & {
-            background-color: @color--accent;
             border-color: lighten(@color--accent, 7%);
         }
 
         .style--dark & {
-            background-color: @color--dark;
             border-color: lighten(@color--dark, 7%);
         }
     }
@@ -414,8 +399,8 @@
 
 
     .style--light & {
-        border-color: lighten(@color--light, 7%);
-        color: @contrast--light;
+        border-color: mix(@color-swatch2, @color-swatch1, 6%);
+        color: @color-swatch3;
     }
 
     .style--accent & {
@@ -436,7 +421,7 @@
     color: @color-swatch5;
 
     .style--light & {
-        color: fade(@contrast--light, 90%);
+        color: @color-swatch5;
     }
 
     .style--accent & {

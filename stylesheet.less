@@ -896,8 +896,8 @@ table {
 	color: @font-swatch5-color;
 
 	.style--light & {
-		border-top-color: @contrast--light;
-		color: @contrast--light;
+		border-top-color: @font-swatch5-color;
+		color: @font-swatch5-color;
 	}
 
 	.style--accent & {
@@ -930,8 +930,8 @@ th {
 	color: @font-swatch4-color;
 
 	.style--light & {
-		border-bottom-color: @contrast--light;
-		color: @contrast--light;
+		border-bottom-color: @font-swatch5-color;
+		color: @font-swatch4-color;
 	}
 
 	.style--accent & {
@@ -963,7 +963,7 @@ td {
 	letter-spacing: @font-swatch5-letter-spacing;
 
 	.style--light & {
-		border-bottom-color: fade(@contrast--light, 60%);
+		border-bottom-color: fade(@font-swatch5-color, 60%);
 	}
 
 	.style--accent & {
@@ -1002,7 +1002,7 @@ td {
 			border-bottom: 1px solid fade(@font-swatch5-color, 60%);
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
+				border-bottom-color: fade(@font-swatch5-color, 60%);
 			}
 		
 			.style--accent & {
@@ -1019,7 +1019,7 @@ td {
 			border-bottom: 1px solid fade(@font-swatch5-color, 60%);
 
 			.style--light & {
-				border-bottom-color: fade(@contrast--light, 60%);
+				border-bottom-color: fade(@font-swatch5-color, 60%);
 			}
 		
 			.style--accent & {
@@ -1037,7 +1037,7 @@ tr:last-child td {
 	border-bottom: 1px solid @font-swatch5-color;
 
     .style--light & {
-        border-bottom-color: @contrast--light;
+        border-bottom-color: @font-swatch5-color;
     }
 
     .style--accent & {
@@ -1061,7 +1061,7 @@ tr:last-child td {
 			border-bottom: 1px solid @font-swatch5-color;
 
 			.style--light & {
-				border-bottom-color: @contrast--light;
+				border-bottom-color: @font-swatch5-color;
 			}
 		
 			.style--accent & {
@@ -1077,7 +1077,7 @@ tr:last-child td {
 			border-bottom: 1px solid @font-swatch5-color;
 
 			.style--light & {
-				border-bottom-color: @contrast--light;
+				border-bottom-color: @font-swatch5-color;
 			}
 		
 			.style--accent & {
@@ -1178,49 +1178,15 @@ tr:last-child td {
 		text-decoration: none;
 	}
 
-    span.image-title {
-        display: block;
-        margin: 5px;
-        font-family: @font-swatch4-font-family;
-        font-weight: @font-swatch4-font-weight;
-        font-size: @font-swatch4-font-size;
-        text-align: center;
-        
-        line-height: @font-swatch4-line-height;
-
-        .style--light & {
-            color: @contrast--light;
-        }
-
-        .style--accent & {
-            color: @contrast--accent;
-        }
-
-        .style--dark & {
-            color: @contrast--dark;
-        }
-    }
-
+    span.image-title,
     span.image-description {
         display: block;
         margin: 5px;
         text-align: center;
-        font-family: @font-swatch5-font-family;
-        font-weight: @font-swatch5-font-weight;
-        font-size: @font-swatch5-font-size;
-        line-height: @font-swatch5-line-height;
-
-        .style--light & {
-            color: fade(@contrast--light, 90%);
-        }
-
-        .style--accent & {
-            color: fade(@contrast--accent, 90%);
-        }
-
-        .style--dark & {
-            color: fade(@contrast--dark, 90%);
-        }
+        font-family: @font-swatch4-font-family;
+        font-weight: @font-swatch4-font-weight;
+        font-size: @font-swatch4-font-size;
+        line-height: @font-swatch4-line-height;
     }
 }
 
@@ -1256,7 +1222,7 @@ hr.line {
     border: none;
 
     .style--light & {
-        background-color: darken(@color--light, 15%);
+        background-color: @color-swatch6;
     }
 
     .style--accent & {
@@ -1377,11 +1343,11 @@ hr.line {
 @twitterProfilePicSize: 98px;
 
 .widget.twitter {
-    background-color: lighten(@color-swatch2,70%);
+    background-color: lighten(@color-swatch2, 70%);
     padding: 30px;
 
     .style--light & {
-        background-color: darken(@color--light, 15%);
+        background-color: lighten(@color-swatch2, 70%);
     }
 
     .style--accent & {
@@ -1405,7 +1371,7 @@ hr.line {
             padding-bottom: 0;
 
             .style--light & {
-                background-color: @color--light;
+                background-color: @color-swatch1;
             }
 
             .style--accent & {
@@ -1434,11 +1400,11 @@ hr.line {
                 font-family: @font-swatch5-font-family;
                 line-height: 1;
                 font-weight: normal;
-                color: fade(@color-swatch5,50%);
+                color: fade(@color-swatch5, 50%);
                 text-decoration: none;
 
                 .style--light & {
-                    color: fade(@contrast--light, 80%);
+                    color: fade(@color-swatch5, 50%);
                 }
 
                 .style--accent & {
@@ -1498,19 +1464,22 @@ hr.line {
                     font-family: @font-swatch4-font-family;
                     font-size: @font-swatch5-font-size;
                     color: @color-swatch7;
-                    border-bottom: 1px solid lighten(@color-swatch7,5%);
+                    border-bottom: 1px solid lighten(@color-swatch7, 5%);
                     padding-bottom: 4px;
 
                     .style--light & {
-                        color: @contrast--light;
+                        color: @color-swatch7;
+                        border-bottom: 1px solid lighten(@color-swatch7, 5%);
                     }
 
                     .style--accent & {
                         color: @contrast--accent;
+                        border-bottom: 1px solid lighten(@contrast--accent, 5%);
                     }
 
                     .style--dark & {
                         color: @contrast--dark;
+                        border-bottom: 1px solid lighten(@contrast--dark, 5%);
                     }
 
                     @media @mobile {
@@ -1535,7 +1504,7 @@ hr.line {
                         line-height: @font-swatch5-line-height;
 
                         .style--light & {
-                            color: @contrast--light;
+                            color: @color-swatch3;
                         }
 
                         .style--accent & {
@@ -1645,7 +1614,7 @@ select {
             word-break: break-word;
         
             .style--light & {
-                color: @contrast--light;
+                color: @color-swatch5;
             }
         
             .style--accent & {
@@ -1675,10 +1644,10 @@ select {
         display: block;
         padding: 30px;
         margin: 0px;
-        background-color: lighten(@color-swatch2,70%);
+        background-color: lighten(@color-swatch2, 70%);
 
         .style--light & {
-            background-color: darken(@color--light, 15%);
+            background-color: lighten(@color-swatch2, 70%);
         }
 
         .style--accent & {
@@ -1945,10 +1914,10 @@ select {
 .widget.map  {
     margin: 0px;
     padding: 30px;
-    background-color: lighten(@color-swatch2,70%);
+    background-color: lighten(@color-swatch2, 70%);
 
     .style--light & {
-        background-color: darken(@color--light, 15%);
+        background-color: lighten(@color-swatch2, 70%);
     }
 
     .style--accent & {
@@ -1992,8 +1961,8 @@ select {
             border: 2px solid @color-swatch3;
     
             .style--light & {
-                background-color: @color--light;
-                border-color: @contrast--light;
+                background-color: @color-swatch1;
+                border-color: @color-swatch3;
             }
     
             .style--accent & {
@@ -2011,8 +1980,8 @@ select {
                 border: 2px solid @color-swatch3;
     
                 .style--light & {
-                    background-color: @contrast--light;
-                    border-color: @contrast--light;
+                    background-color: @color-swatch3;
+                    border-color: @color-swatch3;
                 }
     
                 .style--accent & {
@@ -2030,7 +1999,7 @@ select {
                 border: 1px solid @color-swatch3;
     
                 .style--light & {
-                    border-color: @contrast--light;
+                    border-color: @color-swatch3;
                 }
     
                 .style--accent & {
