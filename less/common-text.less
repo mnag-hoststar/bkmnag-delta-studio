@@ -10,11 +10,6 @@ h1 {
 	letter-spacing: @font-swatch1-letter-spacing; 
 	font-size: @font-swatch1-font-size;
 
-    @media @mobile {
-        font-size: bkscale(@font-swatch1-font-size, 0.9);
-        line-height: bkscale(@font-swatch1-line-height, 0.9);
-    }
-
 	a {
 		font-family:@font-swatch1-font-family; 
 		font-weight: @font-swatch1-font-weight; 
@@ -41,11 +36,6 @@ h2 {
 		font-size: @font-swatch2-font-size;
 		color: @color-swatch2;
 	}
-
-    @media @mobile {
-        font-size: bkscale(@font-swatch2-font-size, 0.9);
-        line-height: bkscale(@font-swatch2-line-height, 0.9);
-    }
 }
 
 h3 {
@@ -55,11 +45,6 @@ h3 {
 	line-height:@font-swatch3-line-height; 
 	letter-spacing: @font-swatch3-letter-spacing; 
 	font-size: @font-swatch3-font-size;
-
-    @media @mobile {
-        font-size: bkscale(@font-swatch3-font-size, 0.9);
-        line-height: bkscale(@font-swatch3-line-height, 0.9);
-    }
 	
 	a {
 		font-family:@font-swatch3-font-family; 
@@ -168,50 +153,23 @@ blockquote:before {
 	}
 }
 
-a, p, ol, ul {
-	  word-break: break-word;
-}
-
-p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
-	color: fade(@font-swatch5-color, 90%);
-
-    .style--light & {
-        color: fade(@font-swatch5-color, 90%);
-    }
-
-    .style--accent & {
-        color: fade(@contrast--accent, 90%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 90%);
-    }
-}
-
-html, body, p, ul, ol, li, .p-font, time.blog-post-publish-date {
-    font-size: bkscale(@font-swatch5-font-size, 1);
-    line-height: bkscale(@font-swatch5-line-height, 1);
-
-    .make-font-a-little-smaller(@font__p--line-height);
-    .make-font-smaller(@font__p--line-height);
-    .make-line-height-a-little-smaller(@font__p--line-height);
-    .make-line-height-smaller(@font__p--line-height);
-}
-
+html, body, a, p, ul, ol, li,
+.p-font, time.blog-post-publish-date,
 [data-name="content"] a:not(.contentgroup__link) {
+	word-break: break-word;
 	color: @font-swatch5-color;
 
-    .style--light & {
+	.style--light & {
 		color: @font-swatch5-color;
-    }
+	}
 
-    .style--accent & {
-        color: @contrast--accent;
-    }
+	.style--accent & {
+		color: @contrast--accent;
+	}
 
-    .style--dark & {
-        color: @contrast--dark;
-    }
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // Preformatted and Code Text
@@ -255,31 +213,26 @@ code {
 	}
 }
 
-// Conditional when text is bigger
-
-.make-font-smaller() when (@font-swatch5-font-size > 16px) {
-    @media @tablet {
-        font-size: bkscale(@font-swatch5-font-size, 0.9);
-        line-height: bkscale(@font-swatch5-line-height, 0.9);
-    }
-    @media @mobile {
-        font-size: bkscale(@font-swatch5-font-size, 0.8);
-        line-height: bkscale(@font-swatch5-line-height, 0.8);
-    }
-}
-
-.make-font-a-little-smaller() when (@font-swatch5-font-size > 14px) {
-    @media @mobile {
-        font-size: bkscale(@font-swatch5-font-size, 0.9);
-        line-height: bkscale(@font-swatch5-line-height, 0.9);
-    }
-}
-
 // Blockquote
 
 blockquote {
 	padding: 30px;
 	word-break: break-word;
+	border-left: 1px solid @color-swatch5;
+    font-size: bkscale(@font-swatch5-font-size, 2);
+    line-height: 1.25em;
+
+	.style--light & {
+		border-color: @color-swatch5;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @contrast--dark;
+	}
 	
 	&:before {
 		content: open-quote !important;

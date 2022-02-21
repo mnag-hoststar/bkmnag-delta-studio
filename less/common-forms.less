@@ -30,6 +30,8 @@ button.button,
 .contactform button.btn,
 .advancedcontactform button,
 .advancedcontactform button.btn,
+.widget.signupform .form-group button,
+.widget.signupform .form-group button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
 .widget.dropbox button,
@@ -51,6 +53,7 @@ form.blog-search-form .form-group button,
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
 	font-weight: @font-swatch7-font-weight;
+	line-height: @font-swatch7-line-height;
 	background-color: @font-swatch7-background-color;
 	color: @font-swatch7-color;
 	text-decoration: none;
@@ -160,23 +163,20 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
         display: inline-block;
 
         a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: none;
-            margin: 0 5px 10px;
-            padding: 0;
+			padding: 0;
             width: 40px;
             height: 40px;
-            min-height: 45px;
             border-radius: 50%;
-            text-indent: 0;
-            font-size: 0;
+			line-height: 40px;
+			text-align: center;
+			font-size: 0;
+			background-image: none;
 
 			&:before {
+				display: block;
 				font-family: 'FontAwesome';
 				text-indent: 0;
-				font-size: 24px;
+				font-size: 20px;
 			}
 		}
 
@@ -192,6 +192,18 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	}
 }
 
+footer.bk-footer .widget.profile .bk-profile-socialicons {
+    span {
+        a {
+			background-color: @font-swatch7-background-color-hover;
+
+			&:hover {
+				background-color: darken(@font-swatch7-background-color-hover, 10%);
+			}
+		}
+	}
+}
+
 // FORM
 
 // Text Inputs
@@ -201,7 +213,8 @@ textarea,
 form input,
 form textarea,
 input:-webkit-autofill,
-input:-webkit-autofill:focus {
+input:-webkit-autofill:focus,
+select {
 	background-color: @color-swatch1;
 	border-radius: 0;
 	padding: 0 1em;
@@ -248,6 +261,7 @@ label,
 .widget label,
 .widget .label,
 .ecom-product-vartitle {
+	display: block;
     font-family: @font-swatch1-font-family;
     font-size: @font-swatch4-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -319,7 +333,7 @@ label,
 
 .widget.userregistration {
 	fieldset {
-		margin: 0 auto;
+		margin: 40px auto;
 		padding: 0;
 		border: none;
 		max-width: 400px;

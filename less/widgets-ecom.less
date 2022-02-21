@@ -95,8 +95,6 @@
 
                     .ecombasket-item-count-wrapper {
                         font-family: @font-swatch5-font-family;
-                        font-size: bkscale(@font-swatch5-font-size, 0.8);
-                        line-height: bkscale(@font-swatch5-line-height, 0.8);
                     }
 
                     .ecombasket-item-price {
@@ -109,7 +107,7 @@
                         background-color: @color-swatch3;
                         color: @color-swatch1;
                         display: inline-block;
-                        font-size: bkscale(@font-swatch5-font-size, 0.8);
+                        font-size: @font-swatch5-font-size;
                         text-decoration: none;
                         padding: 0 0.6em;
                         line-height: 1.4;
@@ -299,7 +297,7 @@
 .widget.ecomproductslist .productlist-item-count {
     text-align: center;
     color: fade(@color-swatch5, 60%);
-    font-size: bkscale(@font-swatch5-font-size, 0.8);
+    font-size: @font-swatch5-font-size;
     margin: 1em 0;
 }
 
@@ -346,13 +344,14 @@
 // Image
 
 .widget.ecomproductslist .ecom-productslist-image-wrap,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
     margin-bottom: 0;
     position: relative;
     overflow: visible;
     border: 20px solid mix(@color-swatch3, @color-swatch1, 6%);
     background-color: mix(@color-swatch3, @color-swatch1, 6%);
     background-position: center;
+    height: 250px;
 
     .style--light & {
         background-color: mix(@color-swatch3, @color-swatch1, 6%);
@@ -397,7 +396,6 @@
     padding: 0.5em 0;
     color: @color-swatch3;
 
-
     .style--light & {
         border-color: mix(@color-swatch2, @color-swatch1, 6%);
         color: @color-swatch3;
@@ -418,6 +416,8 @@
 
 .widget.ecomproductslist .ecom-productlist-price,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-price {
+    display: block;
+    margin-top: 5px;
     color: @color-swatch5;
 
     .style--light & {
@@ -478,13 +478,6 @@
             a {
                 width: 100%;
                 position: relative;
-
-                span {
-                    position: absolute;
-                    right: 16px;
-                    color: fade(@color-swatch1, 70%);
-                    padding-left: 0.25em;
-                }
             }
         }
     }
@@ -494,6 +487,16 @@
 
 .widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn[hidden] {
     display: none !important;
+}
+
+.widget.ecomproductslist .ecom-productslist-image {
+    height: 210px;
+    margin: 0 auto;
+    display: none;
+
+    @media @mobile {
+        height: 130px;
+    }
 }
 
 .widget.ecomproduct {
@@ -659,8 +662,9 @@
 
             th {
                 border-bottom: 1px solid @color-swatch2;
+                
                 &:nth-child(2) {
-                    border-right: 1px solid mix(@color-swatch2, @color-swatch1, 10%);
+                    border-right: none;
                 }
             }
         }
@@ -670,7 +674,7 @@
         tr.basket-summary-items {
             @media @mobile {
                 position: relative;
-                border-top: 1px solid @color-swatch2;
+                border-top: none;
                 padding: 0 0 10px 0;
                 margin: 0 0 10px 0;
             }
@@ -722,7 +726,7 @@
                 padding-right: 170px;
                 vertical-align: top;
                 position: relative;
-                border-right: 1px solid mix(@color-swatch2, @color-swatch1, 10%);
+                border-right: none;
 
                 @media @bp-checkout-compact {
                     padding-right: 0;
@@ -739,24 +743,12 @@
                 .basket-summary-productname {
                     font-size: @font-swatch4-font-size;
                     display: block;
-
-                    @media @mobile {
-                        font-size: bkscale(@font-swatch4-font-size, 0.8);
-                    }
-
-                    &:hover {
-                        background-color: mix(@color-swatch2, @color-swatch1, 6%);
-                    }
                 }
 
                 // Price
 
                 .basket-summary-pricepu {
                     font-size: @font-swatch4-font-size;
-
-                    @media @mobile {
-                        font-size: bkscale(@font-swatch4-font-size, 0.8);
-                    }
                 }
 
                 // Quantity label
@@ -769,13 +761,18 @@
                     top: 10px;
                     line-height: 30px;
                     text-align: center;
-                    font-size: bkscale(@font-swatch5-font-size, 0.8);
+                    font-size: @font-swatch5-font-size;
 
                     @media @bp-checkout-compact {
                         position: relative;
                         right: 0;
                         top: 0;
                         width: 130px;
+                    }
+
+                    @media @mobile {
+                        margin-top: 20px;
+                        text-align: left;
                     }
                 }
 
@@ -815,6 +812,7 @@
                         @media @mobile {
                             width: 30px;
                             height: 30px;
+                            min-height: 30px;
                             line-height: 30px;
                         }
 
@@ -874,7 +872,6 @@
                 @media @mobile {
                     text-align: left;
                     border-top: none;
-                    font-size: bkscale(@font-swatch4-font-size, 0.9);
                 }
 
                 &.basket-summary-subtotal {
