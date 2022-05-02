@@ -56,6 +56,7 @@ form.blog-search-form .form-group button,
 	line-height: @font-swatch7-line-height;
 	background-color: @font-swatch7-background-color;
 	color: @font-swatch7-color;
+	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -93,6 +94,10 @@ form.blog-search-form .form-group button,
 	    .style--dark & {
 	        background-color: darken(@color--accent, 10%);
 	   	}
+	}
+
+	@media @mobile {
+		width: 100%;
 	}
 }
 
@@ -153,6 +158,17 @@ form.blog-search-form .form-group button,
     background-position: 1.25em center;
 }
 
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
+}
+
 // Social Icons
 
 .widget.socialicons,
@@ -162,6 +178,7 @@ form.blog-search-form .form-group button,
 
     span {
         display: inline-block;
+		height: 50px;
 
         a {
 			padding: 0;
@@ -228,18 +245,6 @@ select {
     color: @font-swatch5-color;
     border: none;
     -webkit-appearance: none;
-
-	.style--light & {
-		color: @font-swatch5-color;
-	}
-
-	.style--accent & {
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
-	}
 
 	&:focus {
 		box-shadow: inset 0 0 0 1px lighten(@color-swatch5, 20%);
@@ -414,14 +419,6 @@ label,
 		word-break: break-word;
 		text-align: left;
 		text-transform: none;
-
-		span a.form__link {
-			font-family: @font-swatch5-font-family;
-			font-weight: @font-swatch5-font-weight;
-			font-size: @font-swatch5-font-size;
-			line-height: floor(@font-swatch5-line-height*0.8+2);
-			letter-spacing: @font-swatch5-letter-spacing;
-		}
 			
 		&:before,
 		&:after {
@@ -439,6 +436,7 @@ label,
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
 			border: 1px solid @font-swatch7-background-color;
+			border-radius: 0;
 
 			.style--light & {
 				border-color: @color-swatch1;
@@ -512,6 +510,11 @@ label,
 	}
 	
 	label[for*="input--terms"] span a.form__link {
+		font-family: @font-swatch5-font-family;
+		font-weight: @font-swatch5-font-weight;
+		font-size: @font-swatch5-font-size;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		letter-spacing: @font-swatch5-letter-spacing;
 		text-decoration: underline;
 		border: none;
 	}
@@ -533,52 +536,4 @@ input::-moz-placeholder {
 
 input:-ms-input-placeholder {  
 	color: lighten(@color-swatch5,15%);
-}
-
-// Terms Checkbox
-
-.widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
-.widget.contactform .form-group.contactform__form-group--terms,
-.widget.signupform .form-group.signupform__form-group--terms {
-	input[type="checkbox"] {
-		margin: 4px 12px 4px 4px;
-		height: auto !important;
-		width: auto !important;
-		min-height: auto;
-		min-width: auto;
-		opacity: 1;
-		-webkit-appearance: checkbox;
-		-moz-appearance: checkbox;
-		appearance: checkbox;
-	}
-	
-	label {
-		padding-bottom: 0;
-		
-		&:before {
-			display: none;
-		}
-		
-		.form__link {
-			font-family:@font-swatch1-font-family;
-			font-size:@font-swatch4-font-size;
-			font-weight:@font-swatch4-font-weight;
-			line-height:@font-swatch4-line-height;
-			letter-spacing: @font-swatch4-letter-spacing;
-			color: @color-swatch4;
-			word-break: break-word;
-
-			.style--light & {
-                color: @color-swatch4;
-            }
-
-            .style--accent & {
-                color: @contrast--accent;
-            }
-
-            .style--dark & {
-                color: @contrast--dark;
-            }
-		}
-	}
 }

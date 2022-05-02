@@ -241,8 +241,7 @@
                     }
 
                     @media @desktop {
-                        max-width: 600px;
-                        margin: 0 auto;
+                        margin: 0 0.5em;
                     }
 
                     @media @mobile {
@@ -271,6 +270,11 @@
                         -webkit-align-self: auto;
                         -ms-flex-item-align: auto;
                         align-self: auto;
+
+                        @media @mobile {
+                            margin-right: 0;
+                            margin-bottom: 1em;
+                        }
                     }
 
                     button {
@@ -304,7 +308,9 @@
 // Product Item
 
 .widget.ecomproductslist .ecom-productslist-product,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap.products-2 .ecom-featuredproducts-product {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 30px;
@@ -363,13 +369,13 @@
     }
 
     .style--accent & {
-        background-color: @color--accent;
-        border-color: lighten(@color--accent, 7%);
+        background-color: lighten(@color--accent, 10%);
+        border-color: lighten(@color--accent, 10%);
     }
 
     .style--dark & {
-        background-color: @color--dark;
-        border-color: lighten(@color--dark, 7%);
+        background-color: lighten(@color--dark, 10%);
+        border-color: lighten(@color--dark, 10%);
     }
 
     @media @mobile {
@@ -408,7 +414,7 @@
     flex-grow: 1;
     font-size: bkscale(@font-swatch4-font-size, 1);
     border-bottom: 3px solid mix(@color-swatch2, @color-swatch1, 6%);
-    padding: 0.5em 0;
+    padding: 0.5em 0 0;
     color: @color-swatch3;
 
     .style--light & {
@@ -472,6 +478,11 @@
             }
 
             @media @mobile {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .responsivecolumns & {
                 width: 100%;
                 margin-right: 0;
             }
@@ -551,7 +562,7 @@
             // Add to cart
 
             .ecom-product-add-to-cart-btn-wrapper {
-                margin: 0 0 1em 0;
+                margin: 0;
 
                 .ecom-product-add-to-cart-btn {
                     &.added {
@@ -567,6 +578,10 @@
 
                 .ecom-product-go-to-checkout-btn {
                     margin-top: 0;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
                 }
             }
 
@@ -593,6 +608,7 @@
                 .store-category-link,
                 .ecom-product-tag-link {
                     display: inline-block;
+                    margin-right: 0.5em;
                     padding: 0em 0.7em;
                     background-color: @font-swatch7-background-color;
                     color: @font-swatch7-color;
@@ -606,6 +622,11 @@
                 }
             }
         }
+    }
+
+    .btn {
+        margin: 20px 0 0;
+        min-width: 250px;
     }
 	
 	.product-actions {
@@ -622,6 +643,12 @@
 			}
 		}
 	}
+
+    .ecom-product-long-description {
+        clear: both;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
 }
 
 // Basket Summary
@@ -647,6 +674,7 @@
         margin-bottom: 30px;
         border-spacing: 0;
         width: 100%;
+        border-top: none;
 
         tr {
             @media @mobile {
@@ -678,6 +706,10 @@
                 &:nth-child(2) {
                     border-right: none;
                 }
+
+                &:last-child {
+                    text-align: right;
+                }
             }
         }
 
@@ -687,14 +719,22 @@
             @media @mobile {
                 position: relative;
                 border-top: none;
-                padding: 0 0 10px 0;
-                margin: 0 0 10px 0;
+                padding: 0;
+                margin: 0;
             }
 
             td {
                 border-bottom: 1px solid @color-swatch2;
+
                 @media @mobile {
                     border-bottom: none;
+                }
+
+                &.basket-summary-amount {
+                    @media @mobile {
+                        border-bottom: 1px solid @color-swatch2;
+                    }
+
                 }
             }
 
@@ -710,13 +750,14 @@
                     height: 0;
                     padding-bottom: 100%;
                     float: none;
-                    background-size: cover;
+                    background-size: contain;
                     background-position: center;
 
                     @media @mobile {
+                        margin: 0 auto;
                         padding-bottom: 0;
                         height: auto;
-                        background-position: -1000px;
+                        background-image: none !important;
                     }
 
                     img {
@@ -724,8 +765,9 @@
                         
                         @media @mobile {
                             display: block;
-                            width: 60%;
-                            height: auto;
+                            width: auto;
+                            max-height: 150px;
+                            margin: 0 auto;
                         }
                     }
                 }
@@ -736,7 +778,6 @@
             td:nth-child(2) {
                 padding-left: 1em;
                 padding-right: 170px;
-                vertical-align: top;
                 position: relative;
                 border-right: none;
 
@@ -752,15 +793,14 @@
 
                 // Name
 
-                .basket-summary-productname {
-                    font-size: @font-swatch4-font-size;
-                    display: block;
-                }
-
-                // Price
-
+                .basket-summary-productname,
                 .basket-summary-pricepu {
+                    display: block;
                     font-size: @font-swatch4-font-size;
+
+                    @media @mobile {
+                        text-align: center;
+                    }
                 }
 
                 // Quantity label
@@ -772,19 +812,18 @@
                     display: block;
                     top: 10px;
                     line-height: 30px;
-                    text-align: center;
                     font-size: @font-swatch5-font-size;
 
                     @media @bp-checkout-compact {
                         position: relative;
                         right: 0;
                         top: 0;
-                        width: 130px;
+                        margin-top: 10px;
                     }
 
                     @media @mobile {
-                        margin-top: 20px;
-                        text-align: left;
+                        margin: 20px auto;
+                        text-align: center;
                     }
                 }
 
@@ -805,7 +844,6 @@
 
                     @media @mobile {
                         height: 30px;
-                        width: 130px;
                     }
 
                     button {
@@ -820,13 +858,6 @@
                         top: 0;
                         width: 40px;
                         height: 40px;
-
-                        @media @mobile {
-                            width: 30px;
-                            height: 30px;
-                            min-height: 30px;
-                            line-height: 30px;
-                        }
 
                         &.js-remove {
                             left: 0;
@@ -851,13 +882,6 @@
                         top: 0;
                         display: block;
                         width: 70px;
-
-                        @media @mobile {
-                            height: 30px;
-                            line-height: 30px;
-                            left: 30px;
-                            right: 30px;
-                        }
                     }
                 }
             }
@@ -866,10 +890,8 @@
                 text-align: right;
 
                 @media @mobile {
-                    text-align: left;
-                    position: absolute;
-                    right: 0;
-                    bottom: 20px;
+                    text-align: center;
+                    padding: 20px 0;
                 }
             }
         }
@@ -879,18 +901,20 @@
         tbody tr:last-child {
             td {
                 font-size: @font-swatch4-font-size;
-                border-top: 5px solid @color-swatch2;
+                border-top: 4px solid @color-swatch2;
+                border-bottom: 5px solid @color-swatch2;
+                padding: 20px 0;
 
                 @media @mobile {
-                    text-align: left;
-                    border-top: none;
+                    display: none;
                 }
 
                 &.basket-summary-subtotal {
                     text-align: right;
 
                     @media @mobile {
-                        border-top: 5px solid @color-swatch2;
+                        display: block;
+                        border-top: 4px solid @color-swatch2;
                     }
                 }
             }
@@ -908,5 +932,9 @@
 			width: 100%;
 			text-align: center;
 		}
+
+        &:hover {
+            text-decoration: none;
+        }
 	}
 }

@@ -125,6 +125,22 @@ blockquote:before {
     }
 }
 
+p {
+	color: @color-swatch5;
+
+	.style--light & {
+		color: @color-swatch5;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
+}
+
 // Normal Text
 
 .widget.content .wysihtml-editor-content,
