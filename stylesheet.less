@@ -1268,16 +1268,31 @@ hr.line {
         .review {
             display: block;
             margin-top: 0.5em;
-            background: mix(@color-swatch6, @color-swatch1, 10%);
             font-family: @font-swatch5-font-family;
             font-size: @font-swatch5-font-size;
             font-weight: @font-swatch5-font-weight;
             line-height: @font-swatch5-line-height;
-            color: darken(@color-swatch5, 30%);
             letter-spacing: @font-swatch5-letter-spacing;
             padding: 24px;
             position: relative;
             margin-bottom: 30px;
+            background: lighten(@color-swatch2, 70%);
+            color: @color-swatch5;
+        
+            .style--light & {
+                background: lighten(@color-swatch2, 70%);
+                color: @color-swatch5;
+            }
+        
+            .style--accent & {
+                background: darken(@color--accent, 15%);
+                color: @contrast--accent;
+            }
+        
+            .style--dark & {
+                background: lighten(@color--dark, 7%);
+                color: @contrast--dark;
+            }
 
             &:after {
                 content: '';
@@ -1285,10 +1300,22 @@ hr.line {
                 height: 0;
                 border-style: solid;
                 border-width: 24px 24px 0 0;
-                border-color: mix(@color-swatch6, @color-swatch1, 10%) transparent transparent transparent;
+                border-color: lighten(@color-swatch2, 70%) transparent transparent transparent;
                 position: absolute;
                 top: 100%;
                 left: 24px;
+            
+                .style--light & {
+                    border-color: lighten(@color-swatch2, 70%) transparent transparent transparent;
+                }
+            
+                .style--accent & {
+                    border-color: darken(@color--accent, 15%) transparent transparent transparent;
+                }
+            
+                .style--dark & {
+                    border-color: lighten(@color--dark, 7%) transparent transparent transparent;
+                }
             }
         }
 
