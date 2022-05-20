@@ -9,11 +9,11 @@
     }
 
     .style--accent & {
-        background-color: darken(@color--accent, 15%);
+        background-color: darken(@color--accent, 5%);
     }
 
     .style--dark & {
-        background-color:  lighten(@color--dark, 7%);
+        background-color:  lighten(@color--dark, 10%);
     }
 
     .style--background-image & {
@@ -34,6 +34,7 @@ button.button,
 .widget.signupform .form-group button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -50,7 +51,7 @@ form.blog-search-form .form-group button,
 	user-select: none;
 	border-radius: 0;
 	min-height: 36px;
-	height: auto !important;
+	height: auto;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
 	font-weight: @font-swatch7-font-weight;
@@ -93,7 +94,7 @@ form.blog-search-form .form-group button,
 	    }
 
 	    .style--dark & {
-	        background-color: darken(@color--accent, 10%);
+	        background-color: darken(@color--accent, 5%);
 	   	}
 	}
 
@@ -240,6 +241,7 @@ select {
 	margin-right: 0.6em;
 	text-indent: 0;
 	min-height: 36px;
+    height: auto !important;
 	line-height: @font-swatch7-line-height;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
@@ -247,18 +249,26 @@ select {
     border: none;
     -webkit-appearance: none;
 
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
+		color: @font-swatch5-color;
+	}
+
 	&:focus {
 		box-shadow: inset 0 0 0 1px lighten(@color-swatch5, 20%);
 		outline: none;
 	}
 }
 
-textarea {
+textarea,
+form textarea {
 	line-height: @font-swatch7-line-height;
 	min-height: 10em;
 	padding-top: 0.6em;
 	padding-bottom: 0.6em;
 	border: none;
+	min-height: 100px;
 }
 
 // Labels
