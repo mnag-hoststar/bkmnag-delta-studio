@@ -45,7 +45,8 @@ button.button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
-.blog-post-more-link a {
+.blog-post-more-link a,
+.productlist-clear-search {
 	padding: 7px 20px;
 	display: inline-block;
 	cursor: pointer;
@@ -170,6 +171,16 @@ form.blog-search-form .form-group button,
 	span.file-name {
 		display: block;
 		margin: 0.5em 0;
+	}
+}
+
+// Product List Clear Search
+
+.productlist-clear-search {
+	margin: 10px 10px 60px;
+
+	@media @mobile {
+		width: calc(~"100% - 20px");
 	}
 }
 
