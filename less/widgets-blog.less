@@ -3,9 +3,10 @@
 @bp-blog-compact: ~"only screen and (max-width : 1000px)";
 @bp-blog-small: ~"only screen and (max-width : 800px)";
 
-// BlogSearch
+// Blog Search
 
 .widget.blogsearch {
+	margin-bottom: 2em;
 	padding: 15px;
 	background-color: lighten(@color-swatch2, 70%);
 
@@ -226,6 +227,14 @@
 		}
 	}
 
+	.blog-post-tags,
+	.blog-post-metadata {
+		li {
+			display: inline;
+			padding-right: 0.5em;
+		}
+	}
+	
 	.blog-list-footer {
 		margin-bottom: 2em;
 		text-align: center;
@@ -326,7 +335,9 @@
 
 				a {
 					display: inline-block;
-					padding: 0em 0.7em;
+					margin-right: 0.25em;
+					margin-bottom: 0.5em;
+					padding: 0.05em 0.7em;
 					background-color: @font-swatch7-background-color;
 					color: @font-swatch7-color;
 					letter-spacing: 1px;
